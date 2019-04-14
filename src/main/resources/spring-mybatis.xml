@@ -39,8 +39,10 @@
     <!-- mybatis和spring完美整合，不需要mybatis的配置映射文件 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
+        <!--<property name="configLocation" value="classpath:mybatis-config.xml"></property>-->
         <!-- 自动扫描mapping.xml文件 -->
         <property name="mapperLocations" value="classpath:mapping/*.xml"></property>
+
         <!--插件配置-->
         <property name="plugins">
             <array>
@@ -74,4 +76,5 @@
 
     <!--采用注解进行事务配置，在Service的实现类上面加上@Transactional注解-->
     <tx:annotation-driven transaction-manager="transactionManager"/>
+    
 </beans>

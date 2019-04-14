@@ -79,3 +79,8 @@ i {
     margin-left: 165px;
     margin-top: -50px;
 }
+
+.admin-alert {
+    color: #FF5722;
+    margin-top: 5px
+}

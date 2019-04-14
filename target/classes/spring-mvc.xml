@@ -80,7 +80,7 @@
             <mvc:mapping path="/admin/**/*"/>
             <!--排除登录页面-->
             <mvc:exclude-mapping path="login"/>
-            <bean class="com.alan.interceptor.SessionInterceptor">
+            <bean class="com.alan.interceptor.AdminSessionInterceptor">
 
             </bean>
         </mvc:interceptor>
@@ -88,5 +88,5 @@
 
     <!--静态资源的处理-->
     <mvc:default-servlet-handler/>
-    
+
 </beans>

@@ -43,20 +43,22 @@
                 <img class="admin-captcha" src="../Kaptcha"
                      onclick="changeVerifyCode(this)">
             </div>
-            <button class="layui-btn admin-button" lay-submit lay-filter="formDemo">登录</button>
+            <div class="admin-alert">
+                <span>${login_result}</span>
+            </div>
+            <button class="layui-btn admin-button" lay-submit lay-filter="formDemo" id="admin_login">登录</button>
 
 
         </form>
     </div>
 </div>
 <script src="${path}/static/plugins/layui/layui.js"></script>
+<script type="text/javascript" src="${path}/static/plugins/jquery/jquery.min.js"></script>
 <script>
 
     function changeVerifyCode(img){
         img.src="../Kaptcha?" + Math.floor(Math.random()*100);
     }
-
-
 </script>
 </body>
 

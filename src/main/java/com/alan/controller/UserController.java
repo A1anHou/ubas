@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- * Created by Zhangxq on 2016/7/15.
+ * Created by AlanHou on 2019/4/14.
  */
 
 @Controller
@@ -23,12 +23,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/showUser")
+    /*@RequestMapping("/showUser")
     public String showUser(HttpServletRequest request, Model model){
         System.out.println("123");
         log.info("查询所有用户信息");
         List<User> userList = userService.getAllUser();
         model.addAttribute("userList",userList);
         return "showUser";
-    }
+    }*/
 }

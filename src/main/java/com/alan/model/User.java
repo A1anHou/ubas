@@ -1,28 +1,37 @@
 package com.alan.model;
 
 import java.util.Date;
+import java.util.List;
 
 /**
- * Created by Zhangxq on 2016/7/15.
+ * Created by AlanHou on 2019/4/14.
  */
 public class User {
 
-    private Long id;
+    private int userId;
+    private long userTel;
     private String userName;
-    private String userPhone;
-    private String userEmail;
     private String userPwd;
-    private String pwdSalt;
-    private Date createTime;
-    private Date modifyTime;
-    private Short isDelete;
+    private Date userBirthday;
+    private int userGender;
+    private String userJob;
+    private Date userRegTime;
+    private List<Parent> parentList;
 
-    public Long getId() {
-        return id;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public long getUserTel() {
+        return userTel;
+    }
+
+    public void setUserTel(long userTel) {
+        this.userTel = userTel;
     }
 
     public String getUserName() {
@@ -33,22 +42,6 @@ public class User {
         this.userName = userName;
     }
 
-    public String getUserPhone() {
-        return userPhone;
-    }
-
-    public void setUserPhone(String userPhone) {
-        this.userPhone = userPhone;
-    }
-
-    public String getUserEmail() {
-        return userEmail;
-    }
-
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
-
     public String getUserPwd() {
         return userPwd;
     }
@@ -57,35 +50,43 @@ public class User {
         this.userPwd = userPwd;
     }
 
-    public String getPwdSalt() {
-        return pwdSalt;
+    public Date getUserBirthday() {
+        return userBirthday;
     }
 
-    public void setPwdSalt(String pwdSalt) {
-        this.pwdSalt = pwdSalt;
+    public void setUserBirthday(Date userBirthday) {
+        this.userBirthday = userBirthday;
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public int getUserGender() {
+        return userGender;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setUserGender(int userGender) {
+        this.userGender = userGender;
     }
 
-    public Date getModifyTime() {
-        return modifyTime;
+    public String getUserJob() {
+        return userJob;
     }
 
-    public void setModifyTime(Date modifyTime) {
-        this.modifyTime = modifyTime;
+    public void setUserJob(String userJob) {
+        this.userJob = userJob;
     }
 
-    public Short getIsDelete() {
-        return isDelete;
+    public Date getUserRegTime() {
+        return userRegTime;
     }
 
-    public void setIsDelete(Short isDelete) {
-        this.isDelete = isDelete;
+    public void setUserRegTime(Date userRegTime) {
+        this.userRegTime = userRegTime;
+    }
+
+    public List<Parent> getParentList() {
+        return parentList;
+    }
+
+    public void setParentList(List<Parent> parentList) {
+        this.parentList = parentList;
     }
 }

@@ -1,27 +1,34 @@
 package com.alan.interceptor;
 
-import com.alan.model.User;
+import com.alan.model.Admin;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class SessionInterceptor implements HandlerInterceptor {
+public class AdminSessionInterceptor implements HandlerInterceptor {
     //检查当前会话是否有User，有则放行，没有不放行
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Object user = request.getSession().getAttribute("SESSION_USER");
+        String requestURI = request.getRequestURI();
+        String uri = requestURI.substring(requestURI.lastIndexOf("/"));
+        //排除登录请求
+        if(uri.startsWith("/login") ) {
+            return true;
+        }
         if(user == null){
+            response.sendRedirect(request.getContextPath() + "/jsp/login.jsp");
             return false;
         }
-        if(user instanceof User){
-            User u = (User)user;
-            //u.setPassword(null);
-            request.getSession().setAttribute("SESSION_USER",u);
+        if(user instanceof Admin){
+            Admin admin = (Admin)user;
+            admin.setAdminPwd(null);
+            request.getSession().setAttribute("SESSION_USER",admin);
             return true;
         }else{
-            System.out.println("请不要搞事");
+            response.sendRedirect(request.getContextPath() + "/jsp/login.jsp");
             return false;
         }
     }
