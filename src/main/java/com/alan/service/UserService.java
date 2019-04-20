@@ -5,11 +5,10 @@ import com.alan.model.User;
 import java.util.List;
 
 /**
- * Created by Zhangxq on 2016/7/15.
+ * Created by AlanHou on 2019/4/15.
  */
 public interface UserService {
-
-//    List<User> getAllUser();
+    List<User> getAllUser();
 //
 //    User getUserByPhoneOrEmail(String emailOrPhone, Short state);
 //

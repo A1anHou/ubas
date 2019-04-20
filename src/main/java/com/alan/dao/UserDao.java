@@ -17,5 +17,6 @@ public interface UserDao {
 
     User selectUserByPhoneOrEmail(@Param("emailOrPhone") String emailOrPhone, @Param("state") Short state);
 
-    List<User> selectAllUser();*/
+    */
+    List<User> selectAllUser();
 }

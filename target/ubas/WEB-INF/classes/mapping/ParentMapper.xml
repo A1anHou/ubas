@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.alan.dao.ParentDao">
+
+    <resultMap id="ParentBaseMap" type="com.alan.model.Parent">
+        <id column="parent_id" property="parentId"/>
+        <result column="parent_tel" property="parentTel"/>
+        <result column="parent_name" property="parentName"/>
+        <result column="parent_password" property="parentPwd"/>
+        <result column="parent_reg_time" property="parentRegTime"/>
+    </resultMap>
+
+    <select id="selectAllParent" resultMap="ParentBaseMap">
+        SELECT * FROM parent
+    </select>
+</mapper>

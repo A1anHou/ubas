@@ -58,4 +58,16 @@ public class App {
     public void setAppAddTime(Date appAddTime) {
         this.appAddTime = appAddTime;
     }
+
+    @Override
+    public String toString() {
+        return "App{" +
+                "appId=" + appId +
+                ", appName='" + appName + '\'' +
+                ", appPackage='" + appPackage + '\'' +
+                ", appType='" + appType + '\'' +
+                ", appIcon='" + appIcon + '\'' +
+                ", appAddTime=" + appAddTime +
+                '}';
+    }
 }

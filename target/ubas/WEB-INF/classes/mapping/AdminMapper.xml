@@ -13,5 +13,12 @@
         SELECT * FROM admin
         WHERE admin_tel = #{adminTel}
     </select>
+    <select id="selectAllAdmin"  resultMap="AdminBaseMap">
+        SELECT * FROM admin
+    </select>
+    <select id="selectAdminById" parameterType="java.lang.Integer" resultMap="AdminBaseMap">
+        SELECT * FROM admin
+        WHERE admin_id = #{adminId}
+    </select>
 
 </mapper>

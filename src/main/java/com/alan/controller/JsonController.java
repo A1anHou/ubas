@@ -27,6 +27,6 @@ public class JsonController {
         System.err.println("123");
         System.out.println(user.toString());
 
-        return "msg";
+        return "admin/index";
     }
 }

@@ -10,27 +10,27 @@
     <div class="layui-logo">用户行为分析系统</div>
     <!-- 头部区域（可配合layui已有的水平导航） -->
     <ul class="layui-nav layui-layout-left">
-        <li class="layui-nav-item"><a href="">数据概览</a></li>
-        <li class="layui-nav-item"><a href="">应用管理</a></li>
+        <li class="layui-nav-item"><a href="${path}/admin/index">数据概览</a></li>
+        <li class="layui-nav-item"><a href="${path}/admin/app">应用管理</a></li>
         <li class="layui-nav-item">
             <a href="javascript:;">用户管理</a>
             <dl class="layui-nav-child">
-                <dd><a href="">普通用户</a></dd>
-                <dd><a href="">家长用户</a></dd>
-                <dd><a href="">管理员用户</a></dd>
+                <dd><a href="${path}/admin/user">普通用户</a></dd>
+                <dd><a href="${path}/admin/parent">家长用户</a></dd>
+                <dd><a href="${path}/admin/admin">管理员用户</a></dd>
             </dl>
         </li>
     </ul>
     <ul class="layui-nav layui-layout-right">
         <li class="layui-nav-item">
             <a href="javascript:;">
-                <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                Admin
+                <img src="${path}/static/custom/image/admin.png" class="layui-nav-img">
+                ${sessionScope.SESSION_USER.adminName}
             </a>
             <dl class="layui-nav-child">
-                <dd><a href="">我的信息</a></dd>
-                <dd><a href="">安全设置</a></dd>
-                <dd><a href="">退出登录</a></dd>
+                <dd><a href="${path}/admin/myInfo">我的信息</a></dd>
+                <dd><a href="${path}/admin/editMyInfo">账号设置</a></dd>
+                <dd><a href="${path}/admin/logout">退出登录</a></dd>
             </dl>
         </li>
     </ul>

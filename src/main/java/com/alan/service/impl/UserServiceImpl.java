@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * Created by Zhangxq on 2016/7/15.
+ * Created by AlanHou on 2019/4/15.
  */
 
 @Service
@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
 //        return userDao.selectUserByPhoneOrEmail(emailOrPhone,state);
 //    }
 //
-//    public List<User> getAllUser() {
-//        return userDao.selectAllUser();
-//    }
+    public List<User> getAllUser() {
+        return userDao.selectAllUser();
+    }
 }
