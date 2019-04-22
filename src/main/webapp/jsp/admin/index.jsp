@@ -25,9 +25,9 @@
             <!-- BEGIN PAGE HEAD -->
             <div class="layui-row">
                 <div class="page-title">
-                    <h1>情况概览
+                    <h2>情况概览
                         <small>新增用户 & 新增应用</small>
-                    </h1>
+                    </h2>
                 </div>
             </div>
             <!-- END PAGE HEAD -->
@@ -52,7 +52,7 @@
                             </div>
                             <div class="layui-table-header layui-col-xs1">
                                 <div class="caption caption-md">
-                                    <a href="#" class="caption-subject theme-font bold">More>></a>
+                                    <a href="${path}/admin/user" class="caption-subject theme-font bold">More>></a>
                                 </div>
                             </div>
                             <div class="portlet-body">
@@ -205,7 +205,7 @@
                             </div>
                             <div class="layui-table-header layui-col-xs1">
                                 <div class="caption caption-md">
-                                    <a href="#" class="caption-subject theme-font bold">More>></a>
+                                    <a href="${path}/admin/app" class="caption-subject theme-font bold">More>></a>
                                 </div>
                             </div>
                             <div class="portlet-body">

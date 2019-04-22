@@ -56,20 +56,8 @@
         $('#delete').click(function () {
             var r=confirm("确认删除？");
             if (r==true) {
-                var obj = {
-                    'adminName':${admin.adminId},
-                };
-
-                $.ajax({
-                    url:'${path}/admin/delAdmin',
-                    type:'post',
-                    data:JSON.stringify(obj),
-                    contentType:"application/json",
-                    success:function (data) {
-                        alert("删除成功！");
-                        window.location.href="${path}/jsp/login.jsp";
-                    }
-                })
+                window.location.href="${path}/admin/delAdmin?adminId=${admin.adminId}";
+                window.event.returnValue=false;
             }
         })
     })

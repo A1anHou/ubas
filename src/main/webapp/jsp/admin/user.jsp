@@ -21,13 +21,24 @@
     <jsp:include page="../common/admin_header.jsp"></jsp:include>
 
     <div class="layui-body" style="left: 0">
-        <table class="layui-table">
+        <div class="layui-table-header">
+            <form class="layui-form" action="${path}/admin/searchUser">
+                <button type="submit" class="layui-btn layui-btn-radius" id="searchBtn" lay-submit lay-filter="search" style="float: right;">搜索</button>
+                <div class="layui-input-block" style="float: right; position: relative;">
+                    <label class="layui-form-label">用户搜索</label>
+                    <input style="width: auto;" type="text" id="searchKeyword" name="keyword" lay-verify="required" placeholder="请输入用户ID或姓名" autocomplete="off" class="layui-input">
+                </div>
+            </form>
+        </div>
+        <table class="layui-table" lay-skin="line">
             <tr>
                 <th>ID</th>
                 <th>用户名</th>
                 <th>用户电话</th>
                 <th>用户职业</th>
+                <th>性别</th>
                 <th>注册时间</th>
+                <th>关联家长数</th>
             </tr>
 
             <c:if test="${!empty userList}">
@@ -37,7 +48,16 @@
                         <td>${user.userName}</td>
                         <td>${user.userTel}</td>
                         <td>${user.userJob}</td>
+                        <td>
+                            <c:if test="${user.userGender == 0}">
+                                女
+                            </c:if>
+                            <c:if test="${user.userGender == 1}">
+                                男
+                            </c:if>
+                        </td>
                         <td>${user.userRegTime}</td>
+                        <td>${parentNum.get(user.userId)}</td>
                     </tr>
                 </c:forEach>
             </c:if>

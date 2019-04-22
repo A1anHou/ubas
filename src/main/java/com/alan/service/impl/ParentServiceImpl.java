@@ -19,4 +19,9 @@ public class ParentServiceImpl implements ParentService {
     public List<Parent> getAllParent() {
         return parentDao.selectAllParent();
     }
+
+    @Override
+    public List<Parent> getParentByIdOrName(String keyword) {
+        return parentDao.selectParentByIdOrName(keyword);
+    }
 }

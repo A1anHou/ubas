@@ -20,4 +20,19 @@ public class AppServiceImpl implements AppService {
         return appDao.selectAllApp();
     }
 
+    @Override
+    public List<App> getAppByNameOrType(String keyword) {
+        return appDao.selectAppByNameOrType(keyword);
+    }
+
+    @Override
+    public void delApp(int appId) {
+        appDao.deleteApp(appId);
+    }
+
+    @Override
+    public void editAppType(int appId, String appType) {
+        appDao.updateAppCategory(appId,appType);
+    }
+
 }

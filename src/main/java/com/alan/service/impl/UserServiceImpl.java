@@ -32,4 +32,9 @@ public class UserServiceImpl implements UserService {
     public List<User> getAllUser() {
         return userDao.selectAllUser();
     }
+
+    @Override
+    public List<User> getUserByIdOrName(String keyword) {
+        return userDao.selectUserByIdOrName(keyword);
+    }
 }

@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="layui-header">
-    <div class="layui-logo">用户行为分析系统</div>
+    <a href="${path}/admin/index"><div class="layui-logo">用户行为分析系统</div></a>
     <!-- 头部区域（可配合layui已有的水平导航） -->
     <ul class="layui-nav layui-layout-left">
         <li class="layui-nav-item"><a href="${path}/admin/index">数据概览</a></li>

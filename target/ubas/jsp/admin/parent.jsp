@@ -21,12 +21,22 @@
     <jsp:include page="../common/admin_header.jsp"></jsp:include>
 
     <div class="layui-body" style="left: 0">
-        <table class="layui-table">
+        <div class="layui-table-header">
+            <form class="layui-form" action="${path}/admin/searchParent">
+                <button type="submit" class="layui-btn layui-btn-radius" id="searchBtn" lay-submit lay-filter="search" style="float: right;">搜索</button>
+                <div class="layui-input-block" style="float: right; position: relative;">
+                    <label class="layui-form-label">家长搜索</label>
+                    <input style="width: auto;" type="text" id="searchKeyword" name="keyword" lay-verify="required" placeholder="请输入家长ID或姓名" autocomplete="off" class="layui-input">
+                </div>
+            </form>
+        </div>
+        <table class="layui-table" lay-skin="line">
             <tr>
                 <th>ID</th>
                 <th>用户名</th>
                 <th>电话号码</th>
                 <th>注册时间</th>
+                <th>关联孩子数</th>
             </tr>
 
             <c:if test="${!empty parentList}">
@@ -36,6 +46,7 @@
                         <td>${parent.parentName}</td>
                         <td>${parent.parentTel}</td>
                         <td>${parent.parentRegTime}</td>
+                        <td>${childNum.get(parent.parentId)}</td>
                     </tr>
                 </c:forEach>
             </c:if>

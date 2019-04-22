@@ -19,4 +19,6 @@ public interface UserDao {
 
     */
     List<User> selectAllUser();
+
+    List<User> selectUserByIdOrName(String keyword);
 }

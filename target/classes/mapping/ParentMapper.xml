@@ -13,4 +13,8 @@
     <select id="selectAllParent" resultMap="ParentBaseMap">
         SELECT * FROM parent
     </select>
+    <select id="selectParentByIdOrName" parameterType="java.lang.String" resultMap="ParentBaseMap">
+        SELECT * FROM parent
+        WHERE parent_id LIKE CONCAT('%',#{keyword},'%') OR parent_name LIKE CONCAT('%',#{keyword},'%')
+    </select>
 </mapper>

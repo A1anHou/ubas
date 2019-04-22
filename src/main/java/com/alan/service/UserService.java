@@ -9,6 +9,8 @@ import java.util.List;
  */
 public interface UserService {
     List<User> getAllUser();
+
+    List<User> getUserByIdOrName(String keyword);
 //
 //    User getUserByPhoneOrEmail(String emailOrPhone, Short state);
 //

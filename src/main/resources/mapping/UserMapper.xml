@@ -31,4 +31,8 @@
     <select id="selectAllUser" resultMap="UserBaseMap">
         SELECT * FROM user
     </select>
+    <select id="selectUserByIdOrName" parameterType="java.lang.String" resultMap="UserBaseMap">
+        SELECT * FROM user
+        WHERE user_id LIKE CONCAT('%',#{keyword},'%') OR user_name LIKE CONCAT('%',#{keyword},'%')
+    </select>
 </mapper>

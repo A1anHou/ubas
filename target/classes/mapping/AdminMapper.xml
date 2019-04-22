@@ -9,6 +9,24 @@
         <result column="admin_password" property="adminPwd"/>
         <result column="admin_add_time" property="adminRegTime"/>
     </resultMap>
+    <insert id="insertAdmin">
+        INSERT INTO admin(admin_tel,admin_name,admin_password,admin_add_time)
+        VALUES (#{adminTel},#{adminName},#{adminPwd},#{adminRegTime})
+    </insert>
+    <update id="updateAdminTel">
+        UPDATE admin
+        SET admin_tel = #{adminTel}
+        WHERE admin_id = #{adminId}
+    </update>
+    <update id="updateAdminPwd">
+        UPDATE admin
+        SET admin_password = #{adminPwd}
+        WHERE admin_id = #{adminId}
+    </update>
+    <delete id="deleteAdmin" parameterType="java.lang.Integer">
+        DELETE FROM admin
+        WHERE admin_id = #{adminId}
+    </delete>
     <select id="selectAdminByTel" parameterType="java.lang.Long" resultMap="AdminBaseMap">
         SELECT * FROM admin
         WHERE admin_tel = #{adminTel}
@@ -19,6 +37,10 @@
     <select id="selectAdminById" parameterType="java.lang.Integer" resultMap="AdminBaseMap">
         SELECT * FROM admin
         WHERE admin_id = #{adminId}
+    </select>
+    <select id="selectAdminByIdOrName" parameterType="java.lang.String" resultMap="AdminBaseMap">
+        SELECT * FROM admin
+        WHERE admin_id LIKE CONCAT('%',#{keyword},'%') OR admin_name LIKE CONCAT('%',#{keyword},'%')
     </select>
 
 </mapper>

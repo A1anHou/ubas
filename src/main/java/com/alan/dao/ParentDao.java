@@ -8,4 +8,6 @@ import java.util.List;
 @Repository
 public interface ParentDao {
     List<Parent> selectAllParent();
+
+    List<Parent> selectParentByIdOrName(String keyword);
 }

@@ -10,9 +10,22 @@
         <result column="app_icon" property="appIcon"/>
         <result column="app_add_time" property="appAddTime"/>
     </resultMap>
+    <update id="updateAppCategory">
+        UPDATE application
+        SET app_category = #{appType}
+        WHERE app_id = #{appId}
+    </update>
+    <delete id="deleteApp">
+        DELETE FROM application
+        WHERE app_id = #{appId}
+    </delete>
 
     <select id="selectAllApp" resultMap="AppBaseMap">
         SELECT * FROM application
+    </select>
+    <select id="selectAppByNameOrType" parameterType="java.lang.String" resultMap="AppBaseMap">
+        SELECT * FROM application
+        WHERE app_name LIKE CONCAT('%',#{keyword},'%') OR app_category LIKE CONCAT('%',#{keyword},'%')
     </select>
 
 </mapper>
