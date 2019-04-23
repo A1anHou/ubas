@@ -35,4 +35,13 @@
         SELECT * FROM user
         WHERE user_id LIKE CONCAT('%',#{keyword},'%') OR user_name LIKE CONCAT('%',#{keyword},'%')
     </select>
+    <select id="selectRecentUser" parameterType="java.lang.Integer" resultMap="UserBaseMap">
+        SELECT * FROM user
+        ORDER BY user_reg_time DESC
+        LIMIT #{num}
+    </select>
+    <select id="selectUserNumByDate"  resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM user WHERE user_reg_time
+        BETWEEN #{startTime} AND #{endTime}
+    </select>
 </mapper>

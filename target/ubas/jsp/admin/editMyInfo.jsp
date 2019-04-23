@@ -117,7 +117,7 @@
                 'adminTel': $('#adminTel').val(),
                 'editType':0
             };
-            alert(JSON.stringify(params))
+            /*alert(JSON.stringify(params))*/
             submit($,params);
             return false;
         });
@@ -128,7 +128,7 @@
               'adminPwd': $('#firstpwd').val(),
               'editType':1
             };
-            alert(JSON.stringify(params))
+            /*alert(JSON.stringify(params))*/
             submit($,params);
             return false;
         });

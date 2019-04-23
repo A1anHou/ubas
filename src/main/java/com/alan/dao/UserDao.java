@@ -4,6 +4,7 @@ import com.alan.model.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -21,4 +22,8 @@ public interface UserDao {
     List<User> selectAllUser();
 
     List<User> selectUserByIdOrName(String keyword);
+
+    List<User> selectRecentUser(int num);
+
+    int selectUserNumByDate(@Param("startTime")Date startTime, @Param("endTime")Date endTime);
 }

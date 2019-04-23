@@ -27,5 +27,14 @@
         SELECT * FROM application
         WHERE app_name LIKE CONCAT('%',#{keyword},'%') OR app_category LIKE CONCAT('%',#{keyword},'%')
     </select>
+    <select id="selectRecentApp" parameterType="java.lang.Integer" resultMap="AppBaseMap">
+        SELECT * FROM application
+        ORDER BY app_add_time DESC
+        LIMIT #{num}
+    </select>
+    <select id="selectAppNumByDate" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM application WHERE app_add_time
+        BETWEEN #{startTime} AND #{endTime}
+    </select>
 
 </mapper>

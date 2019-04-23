@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -33,6 +34,16 @@ public class AppServiceImpl implements AppService {
     @Override
     public void editAppType(int appId, String appType) {
         appDao.updateAppCategory(appId,appType);
+    }
+
+    @Override
+    public List<App> getRecentApp(int num) {
+        return appDao.selectRecentApp(num);
+    }
+
+    @Override
+    public int getAppNumByDate(Date startTime, Date endTime) {
+        return appDao.selectAppNumByDate(startTime,endTime);
     }
 
 }

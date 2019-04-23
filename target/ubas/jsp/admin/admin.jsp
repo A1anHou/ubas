@@ -48,7 +48,9 @@
                         <td>${admin.adminId}</td>
                         <td>${admin.adminName}</td>
                         <td>${admin.adminTel}</td>
-                        <td>${admin.adminRegTime}</td>
+                        <td>
+                            <fmt:formatDate value="${admin.adminRegTime}"  type="both" />
+                        </td>
                         <td>
                             <button class="layui-btn layui-btn-primary layui-btn-sm" onclick="onDelBtn(${admin.adminId})">
                                 <i class="layui-icon">&#xe640;</i>
@@ -58,6 +60,7 @@
                 </c:forEach>
             </c:if>
         </table>
+        <div id="laypage" style="text-align: right;padding-right: 5%"></div>
     </div>
     <jsp:include page="../common/admin_footer.jsp"></jsp:include>
 </div>
@@ -122,11 +125,28 @@
         }
     }
     //JavaScript代码区域
-    layui.use(['element','layer','form'], function () {
+    layui.use(['element','layer','form','laypage'], function () {
         var element = layui.element;
         var layer = layui.layer;
-        $ = layui.jquery;
-        form = layui.form;
+        var laypage = layui.laypage;
+        var $ = layui.jquery;
+        var form = layui.form;
+        //分页
+        laypage.render({
+            elem: 'laypage',
+            count: ${pager.totalRecord},//这个是你的总页面
+            curr: ${pager.pageNum},
+            limit : ${pager.pageSize},//这个是每页面显示多少条，页面跳转后他会自动让下拉框里对应的值设为选中状态
+            limits: [5, 10, 20, 50, 100], //这个是下拉框里显示的option
+            layout: ['prev', 'page','limit','next'],
+            jump: function(obj, first){//这个方法是在你选择页数后触发执行，在这里完成当你点击页码后需要向服务请求数据的操作
+                if(first){ return ; }//如果是第一次不执行
+                var url = "${path}/admin/admin";
+                //拼接分页参数和表单下所有带name属性参数、向后台提交数据、可以实现下一页与搜索的内容同时进行
+                url += '?pageNum='+obj.curr+'&pageSize='+obj.limit;
+                window.location.href = url;
+            }
+        });
 
         //表单验证
         form.verify({
@@ -141,7 +161,7 @@
         //提交监听事件
         form.on('submit(save)', function (data) {
             params = data.field;
-            alert(JSON.stringify(params))
+            /*alert(JSON.stringify(params))*/
             submit($,params);
             return false;
         });

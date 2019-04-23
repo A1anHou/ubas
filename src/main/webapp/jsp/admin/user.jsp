@@ -37,6 +37,7 @@
                 <th>用户电话</th>
                 <th>用户职业</th>
                 <th>性别</th>
+                <th>年龄</th>
                 <th>注册时间</th>
                 <th>关联家长数</th>
             </tr>
@@ -56,12 +57,16 @@
                                 男
                             </c:if>
                         </td>
-                        <td>${user.userRegTime}</td>
+                        <td>${currentYear-user.userBirthday.year}</td>
+                        <td>
+                            <fmt:formatDate value="${ user.userRegTime}"  type="both" />
+                        </td>
                         <td>${parentNum.get(user.userId)}</td>
                     </tr>
                 </c:forEach>
             </c:if>
         </table>
+        <div id="laypage" style="text-align: right;padding-right: 5%"></div>
     </div>
     <jsp:include page="../common/admin_footer.jsp"></jsp:include>
 </div>
@@ -69,8 +74,26 @@
 <script src="${path}/static/plugins/jquery/jquery.min.js"></script>
 <script>
     //JavaScript代码区域
-    layui.use('element', function () {
+    layui.use(['element','laypage'], function () {
         var element = layui.element;
+        var laypage = layui.laypage;
+
+        //分页
+        laypage.render({
+            elem: 'laypage',
+            count: ${pager.totalRecord},//这个是你的总页面
+            curr: ${pager.pageNum},
+            limit : ${pager.pageSize},//这个是每页面显示多少条，页面跳转后他会自动让下拉框里对应的值设为选中状态
+            limits: [5, 10, 20, 50, 100], //这个是下拉框里显示的option
+            layout: ['prev', 'page','limit','next'],
+            jump: function(obj, first){//这个方法是在你选择页数后触发执行，在这里完成当你点击页码后需要向服务请求数据的操作
+                if(first){ return ; }//如果是第一次不执行
+                var url = "${path}/admin/user";
+                //拼接分页参数和表单下所有带name属性参数、向后台提交数据、可以实现下一页与搜索的内容同时进行
+                url += '?pageNum='+obj.curr+'&pageSize='+obj.limit;
+                window.location.href = url;
+            }
+        });
 
     });
 </script>

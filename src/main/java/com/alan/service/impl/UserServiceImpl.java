@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -36,5 +37,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getUserByIdOrName(String keyword) {
         return userDao.selectUserByIdOrName(keyword);
+    }
+
+    @Override
+    public List<User> getRecentUser(int num) {
+        return userDao.selectRecentUser(num);
+    }
+
+    @Override
+    public int getUserNumByDate(Date startTime, Date endTime) {
+        return userDao.selectUserNumByDate(startTime,endTime);
     }
 }
