@@ -14,11 +14,8 @@ import java.util.List;
 @Repository
 public interface UserDao {
 
-    /*User selectUserById(@Param("userId") Long userId);
+    User selectUserById(int userId);
 
-    User selectUserByPhoneOrEmail(@Param("emailOrPhone") String emailOrPhone, @Param("state") Short state);
-
-    */
     List<User> selectAllUser();
 
     List<User> selectUserByIdOrName(String keyword);
@@ -26,4 +23,6 @@ public interface UserDao {
     List<User> selectRecentUser(int num);
 
     int selectUserNumByDate(@Param("startTime")Date startTime, @Param("endTime")Date endTime);
+
+    User selectUserByTel(long userTel);
 }

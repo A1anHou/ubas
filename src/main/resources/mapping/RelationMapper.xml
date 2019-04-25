@@ -1,13 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.alan.dao.RelationDao">
+    <resultMap id="RelationBaseMap" type="com.alan.model.Relation">
+        <id column="relation_id" property="relationId"/>
+        <result column="parent_id" property="parentId"/>
+        <result column="user_id" property="userId"/>
+        <result column="relationship" property="relationship"/>
+        <result column="relate_time" property="relateTime"/>
+    </resultMap>
+    <insert id="insertRelation">
+        INSERT INTO relation(parent_id,user_id,relationship,relate_time)
+        VALUES (#{parentId},#{userId},#{relationship},#{relateTime})
+    </insert>
+    <delete id="deleteRelation">
+        DELETE FROM relation
+        WHERE relation_id = #{relationId}
+    </delete>
 
-    <select id="queryChildNum" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+    <select id="selectChildNum" parameterType="java.lang.Integer" resultType="java.lang.Integer">
         SELECT COUNT(*) FROM relation
         WHERE parent_id = #{parentId}
     </select>
-    <select id="queryParentNum" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+    <select id="selectParentNum" parameterType="java.lang.Integer" resultType="java.lang.Integer">
         SELECT COUNT(*) FROM relation
         WHERE user_id = #{userId}
+    </select>
+    <select id="selectRelationByParentId" parameterType="java.lang.Integer" resultMap="RelationBaseMap">
+        SELECT * FROM relation
+        WHERE parent_id = #{parentId}
+    </select>
+    <select id="selectRelationByParentIdAndUserId" resultMap="RelationBaseMap">
+        SELECT * FROM relation
+        WHERE parent_id = #{parentId}
+        AND user_id = #{userId}
     </select>
 </mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.alan.dao.LocationDao">
+    <resultMap id="LocationBaseMap" type="com.alan.model.Location">
+        <id column="location_id" property="locationId"/>
+        <id column="user_id" property="userId"/>
+        <id column="longitude" property="longitude"/>
+        <id column="latitude" property="latitude"/>
+        <id column="start_time" property="startTime"/>
+        <id column="end_time" property="endTime"/>
+    </resultMap>
+    <select id="selectLocationByUserIdAndDate" resultMap="LocationBaseMap">
+        SELECT * FROM location
+        WHERE user_id = #{userId}
+        AND start_time &gt;= #{startTime}
+        AND end_time &lt;= #{endTime}
+    </select>
+</mapper>

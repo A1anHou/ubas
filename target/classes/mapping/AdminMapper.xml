@@ -40,7 +40,8 @@
     </select>
     <select id="selectAdminByIdOrName" parameterType="java.lang.String" resultMap="AdminBaseMap">
         SELECT * FROM admin
-        WHERE admin_id LIKE CONCAT('%',#{keyword},'%') OR admin_name LIKE CONCAT('%',#{keyword},'%')
+        WHERE admin_id LIKE CONCAT('%',#{keyword},'%')
+        OR admin_name LIKE CONCAT('%',#{keyword},'%')
     </select>
 
 </mapper>

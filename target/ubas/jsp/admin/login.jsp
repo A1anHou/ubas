@@ -40,7 +40,7 @@
                        placeholder="请输入验证码"
                        autocomplete="off"
                        class="layui-input admin-input admin-input-verify">
-                <img class="admin-captcha" src="../Kaptcha"
+                <img class="admin-captcha" src="${path}/Kaptcha"
                      onclick="changeVerifyCode(this)">
             </div>
             <div class="admin-alert">
@@ -57,7 +57,7 @@
 <script>
 
     function changeVerifyCode(img){
-        img.src="../Kaptcha?" + Math.floor(Math.random()*100);
+        img.src="${path}/Kaptcha?" + Math.floor(Math.random()*100);
     }
 </script>
 </body>

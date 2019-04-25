@@ -20,4 +20,6 @@ public interface AppDao {
     List<App> selectRecentApp(int num);
 
     int selectAppNumByDate(@Param("startTime")Date startTime, @Param("endTime")Date endTime);
+
+    App selectAppById(int appId);
 }

@@ -48,4 +48,15 @@ public class UseState {
     public void setEndTime(Date endTime) {
         this.endTime = endTime;
     }
+
+    @Override
+    public String toString() {
+        return "UseState{" +
+                "useStateId=" + useStateId +
+                ", appId=" + appId +
+                ", userId=" + userId +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                '}';
+    }
 }

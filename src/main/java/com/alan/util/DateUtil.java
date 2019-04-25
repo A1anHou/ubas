@@ -19,5 +19,22 @@ public class DateUtil {
         return calendar.getTime();
     }
 
+    public static int getDuration(Date startTime,Date endTime,Date startLimit,Date endLimit){
+        long st = startTime.getTime();
+        long et = endTime.getTime();
+        long sl = startLimit.getTime();
+        long el = endLimit.getTime();
+        if(st>el||et<sl){
+            return 0;
+        }
+        if(st<sl){
+            st=sl;
+        }
+        if(et>el){
+            et=el;
+        }
+        return (int)(et-st)/(1000*60);
+    }
+
 
 }

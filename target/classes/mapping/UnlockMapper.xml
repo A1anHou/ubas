@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.alan.dao.UnlockDao">
+    <resultMap id="UnlockBaseMap" type="com.alan.model.Unlock">
+        <id column="unlock_id" property="unlockId"/>
+        <result column="user_id" property="userId"/>
+        <result column="unlock_time" property="unlockTime"/>
+    </resultMap>
+    <select id="selectUnlockByUserIdAndDate" resultMap="UnlockBaseMap">
+        SELECT * FROM unlock_state
+        WHERE user_id = #{userId}
+        AND unlock_time BETWEEN #{startTime} AND #{endTime}
+    </select>
+</mapper>

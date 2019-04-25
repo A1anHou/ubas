@@ -16,8 +16,8 @@ public interface UserService {
     List<User> getRecentUser(int num);
 
     int getUserNumByDate(Date startTime, Date endTime);
-//
-//    User getUserByPhoneOrEmail(String emailOrPhone, Short state);
-//
-//    User getUserById(Long userId);
+
+    User getUserById(int userId);
+
+    User getUserByTel(long userTel);
 }

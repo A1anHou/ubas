@@ -1,6 +1,8 @@
 package com.alan.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class App {
 
@@ -10,6 +12,8 @@ public class App {
     private String appType;
     private String appIcon;
     private Date appAddTime;
+    private int useTime;
+    private List<UseState> useStateList = new ArrayList<UseState>();
 
     public int getAppId() {
         return appId;
@@ -59,15 +63,19 @@ public class App {
         this.appAddTime = appAddTime;
     }
 
-    @Override
-    public String toString() {
-        return "App{" +
-                "appId=" + appId +
-                ", appName='" + appName + '\'' +
-                ", appPackage='" + appPackage + '\'' +
-                ", appType='" + appType + '\'' +
-                ", appIcon='" + appIcon + '\'' +
-                ", appAddTime=" + appAddTime +
-                '}';
+    public List<UseState> getUseStateList() {
+        return useStateList;
+    }
+
+    public void setUseStateList(List<UseState> useStateList) {
+        this.useStateList = useStateList;
+    }
+
+    public int getUseTime() {
+        return useTime;
+    }
+
+    public void setUseTime(int useTime) {
+        this.useTime = useTime;
     }
 }

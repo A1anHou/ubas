@@ -89,4 +89,19 @@ public class User {
     public void setParentList(List<Parent> parentList) {
         this.parentList = parentList;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", userTel=" + userTel +
+                ", userName='" + userName + '\'' +
+                ", userPwd='" + userPwd + '\'' +
+                ", userBirthday=" + userBirthday +
+                ", userGender=" + userGender +
+                ", userJob='" + userJob + '\'' +
+                ", userRegTime=" + userRegTime +
+                ", parentList=" + parentList +
+                '}';
+    }
 }

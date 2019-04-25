@@ -4,5 +4,5 @@
 </body>
 </html>
 <script>
-    window.location.href = "${path}/jsp/login.jsp"
+    window.location.href = "jsp/parent/login.jsp"
 </script>

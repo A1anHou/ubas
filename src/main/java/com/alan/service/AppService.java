@@ -17,4 +17,6 @@ public interface AppService {
     List<App> getRecentApp(int num);
 
     int getAppNumByDate(Date date, Date needTime);
+
+    App getAppById(int appId);
 }

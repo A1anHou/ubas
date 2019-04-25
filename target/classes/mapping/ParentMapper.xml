@@ -9,12 +9,35 @@
         <result column="parent_password" property="parentPwd"/>
         <result column="parent_reg_time" property="parentRegTime"/>
     </resultMap>
+    <insert id="insertParent">
+        INSERT INTO parent(parent_tel,parent_name,parent_password,parent_reg_time)
+        VALUES (#{parentTel},#{parentName},#{parentPwd},#{parentRegTime})
+    </insert>
+    <update id="updateParentTel">
+        UPDATE parent
+        SET parent_tel = #{parentTel}
+        WHERE parent_id = #{parentId}
+    </update>
+    <update id="updateParentPwd">
+        UPDATE parent
+        SET parent_password = #{parentPwd}
+        WHERE parent_id = #{parentId}
+    </update>
 
     <select id="selectAllParent" resultMap="ParentBaseMap">
         SELECT * FROM parent
     </select>
     <select id="selectParentByIdOrName" parameterType="java.lang.String" resultMap="ParentBaseMap">
         SELECT * FROM parent
-        WHERE parent_id LIKE CONCAT('%',#{keyword},'%') OR parent_name LIKE CONCAT('%',#{keyword},'%')
+        WHERE parent_id LIKE CONCAT('%',#{keyword},'%')
+        OR parent_name LIKE CONCAT('%',#{keyword},'%')
+    </select>
+    <select id="selectParentByTel" parameterType="java.lang.Long" resultMap="ParentBaseMap">
+      SELECT * FROM parent
+      WHERE parent_tel = #{parentTel}
+    </select>
+    <select id="selectParentById" parameterType="java.lang.Integer" resultMap="ParentBaseMap">
+      SELECT * FROM parent
+      WHERE  parent_id = #{parentId}
     </select>
 </mapper>

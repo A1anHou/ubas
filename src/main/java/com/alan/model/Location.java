@@ -9,6 +9,7 @@ public class Location {
     private double latitude;
     private Date startTime;
     private Date endTime;
+    private String description;
 
     public int getLocationId() {
         return locationId;
@@ -56,5 +57,13 @@ public class Location {
 
     public void setEndTime(Date endTime) {
         this.endTime = endTime;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

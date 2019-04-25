@@ -22,14 +22,17 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
 
-//    public User getUserById(Long userId) {
-//        return userDao.selectUserById(userId);
-//    }
-//
-//    public User getUserByPhoneOrEmail(String emailOrPhone, Short state) {
-//        return userDao.selectUserByPhoneOrEmail(emailOrPhone,state);
-//    }
-//
+    @Override
+    public User getUserById(int userId) {
+        return userDao.selectUserById(userId);
+    }
+
+    @Override
+    public User getUserByTel(long userTel) {
+        return userDao.selectUserByTel(userTel);
+    }
+
+    @Override
     public List<User> getAllUser() {
         return userDao.selectAllUser();
     }
@@ -48,4 +51,5 @@ public class UserServiceImpl implements UserService {
     public int getUserNumByDate(Date startTime, Date endTime) {
         return userDao.selectUserNumByDate(startTime,endTime);
     }
+
 }

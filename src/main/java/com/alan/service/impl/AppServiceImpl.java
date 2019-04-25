@@ -46,4 +46,9 @@ public class AppServiceImpl implements AppService {
         return appDao.selectAppNumByDate(startTime,endTime);
     }
 
+    @Override
+    public App getAppById(int appId) {
+        return appDao.selectAppById(appId);
+    }
+
 }

@@ -44,7 +44,7 @@ public class AdminController {
         Map<String, String> result = new HashMap<>();
         if (!CaptchaUtil.checkVerifyCode(request)) {
             model.addAttribute("login_result", "验证码错误");
-            return "login";
+            return "admin/login";
         } else {
             String adminTel = request.getParameter("username");
             //对密码进行MD5加密
@@ -52,7 +52,7 @@ public class AdminController {
 
             if (adminTel == "" || adminPwd == "") {
                 model.addAttribute("login_result", "用户名和密码不能为空");
-                return "login";
+                return "admin/login";
             }
             //数据库检查
             Admin admin = adminService.getAdminByTel(Long.parseLong(adminTel));
@@ -65,14 +65,14 @@ public class AdminController {
                 }
             }
             model.addAttribute("login_result", "用户名或密码错误");
-            return "login";
+            return "admin/login";
         }
     }
 
     @RequestMapping("/logout")
     public String logout(HttpSession session) {
         session.setAttribute("SESSION_USER", null);
-        return "login";
+        return "admin/login";
     }
 
     @RequestMapping("/index")
@@ -194,7 +194,7 @@ public class AdminController {
         if (adminId == ((Admin) session.getAttribute("SESSION_USER")).getAdminId()) {
             adminService.delAdmin(adminId);
             session.setAttribute("SESSION_USER", null);
-            return "login";
+            return "admin/login";
         } else {
             adminService.delAdmin(adminId);
             return "forward:/admin/admin";
