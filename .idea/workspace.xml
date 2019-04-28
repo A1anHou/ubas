@@ -8,82 +8,52 @@
   <component name="ChangeListManager">
     <list default="true" id="dd51f980-b141-4b2d-bd67-e2d190f56499" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/controller/ParentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/controller/ParentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/dao/AppDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/dao/AppDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/dao/ParentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/dao/ParentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/dao/RelationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/dao/RelationDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/model/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/model/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/model/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/model/UseState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/model/UseState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/service/AppService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/service/AppService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/service/ParentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/service/ParentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/service/RelationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/service/RelationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/service/impl/AppServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/service/impl/AppServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/service/impl/ParentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/service/impl/ParentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/service/impl/RelationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/service/impl/RelationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/util/DateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/util/DateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/AdminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/AppMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/AppMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/ParentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/ParentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/RelationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/RelationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/admin/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/custom/css/admin_login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/custom/css/admin_login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/controller/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/controller/AdminController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/controller/JsonController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/controller/ParentController$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/alan/controller/ParentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/dao/AppDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/dao/AppDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/dao/ParentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/dao/ParentDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/dao/RelationDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/dao/RelationDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/model/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/model/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/model/UseState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/model/UseState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/AppService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/service/AppService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/ParentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/service/ParentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/RelationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/service/RelationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/impl/AppServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/service/impl/AppServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/impl/ParentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/service/impl/ParentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/impl/RelationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/service/impl/RelationServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/util/DateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/util/DateUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/AdminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/AppMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/AppMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/ParentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/ParentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/RelationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/RelationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/controller/ParentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/controller/ParentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/dao/AppDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/dao/AppDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/dao/ParentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/dao/ParentDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/dao/RelationDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/dao/RelationDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/model/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/model/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/model/UseState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/model/UseState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/AppService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/AppService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/ParentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/ParentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/RelationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/RelationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/impl/AppServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/impl/AppServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/impl/ParentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/impl/ParentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/impl/RelationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/impl/RelationServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/util/DateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/util/DateUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/mapping/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/mapping/AdminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/mapping/AppMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/mapping/AppMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/mapping/ParentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/mapping/ParentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/mapping/RelationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/mapping/RelationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/mapping/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/mapping/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/jsp/login.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/static/custom/css/admin_login.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/static/custom/css/admin_login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/dao/AdminDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/dao/AppDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/dao/LocationDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/dao/ParentDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/dao/RelationDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/dao/UnlockDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/dao/UseStateDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/interceptor/AdminSessionInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/model/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/model/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/model/Location.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/model/Pager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/model/Parent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/model/Relation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/model/Type.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/model/Unlock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/model/UseState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/AdminService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/AppService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/LocationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/ParentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/RelationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/UnlockService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/UseStateService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/impl/AdminServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/impl/AppServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/impl/LocationServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/impl/ParentServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/impl/RelationServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/impl/UnlockServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/impl/UseStateServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/servlet/WebPathInitServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/util/CaptchaUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/util/ChartHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/util/DateUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/util/RelationshipUtil.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -96,84 +66,14 @@
     <favorites_list name="ubas" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/controller/ParentController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="353" column="60" selection-start-line="353" selection-start-column="60" selection-end-line="353" selection-end-column="60" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#login#0;class#ParentController#0" />
-                <element signature="method#register#0;class#ParentController#0" />
-                <element signature="method#logout#0;class#ParentController#0" />
-                <element signature="method#myInfo#0;class#ParentController#0" />
-                <element signature="method#editParent#0;class#ParentController#0" />
-                <element signature="method#bindChild#0;class#ParentController#0" />
-                <element signature="e#9446#9454#0" expanded="true" />
-                <element signature="e#10632#10640#0" expanded="true" />
-                <element signature="e#12305#12313#0" expanded="true" />
-                <element signature="e#12609#12617#0" expanded="true" />
-                <element signature="e#12703#12719#0" expanded="true" />
-                <element signature="e#13053#13059#0" expanded="true" />
-                <element signature="e#13858#13866#0" expanded="true" />
-                <element signature="e#13999#14007#0" expanded="true" />
-                <element signature="e#14085#14101#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/model/App.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="76" selection-start-line="76" selection-end-line="76" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1506#1507#0" expanded="true" />
-                <element signature="e#1536#1537#0" expanded="true" />
-                <element signature="e#1579#1580#0" expanded="true" />
-                <element signature="e#1617#1618#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/parent/showData.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="168" column="5" selection-start-line="168" selection-start-column="5" selection-end-line="168" selection-end-column="5" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#small#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#form#0;n#small#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#ul#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#ul#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="e#8137#10540#0#HTML" />
-                <element signature="e#10577#11636#0#HTML" />
-                <element signature="e#11673#12734#0#HTML" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -223,8 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/common/parent_header.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alan/service/ParentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alan/service/impl/ParentServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alan/dao/ParentDao.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/parent/editMyInfo.jsp" />
@@ -274,6 +172,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/alan/model/Location.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alan/controller/ParentController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/parent/showData.jsp" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alan/util/CrawlerUtil.java" />
       </list>
     </option>
   </component>
@@ -311,6 +211,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -440,14 +342,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556205721100" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556378102351" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -592,11 +492,14 @@
       <workItem from="1556028249019" duration="1240000" />
       <workItem from="1556068038245" duration="48948000" />
       <workItem from="1556153541384" duration="49696000" />
+      <workItem from="1556206147735" duration="330000" />
+      <workItem from="1556352091018" duration="1088000" />
+      <workItem from="1556419517524" duration="1908000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="294061000" />
+    <option name="totallyTimeSpent" value="297387000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -610,7 +513,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49658313" visible="true" weight="0.22392885" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49658313" visible="true" weight="0.23039612" />
       <window_info id="Structure" order="1" sideWeight="0.5008881" side_tool="true" weight="0.23282135" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -656,20 +559,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/RelationMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/AdminMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="27" column="35" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="27" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/dao/RelationDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
@@ -999,13 +888,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/util/PieChartHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/util/PieChartHelper.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/model/Type.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -1066,45 +949,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/controller/ParentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="353" column="60" selection-start-line="353" selection-start-column="60" selection-end-line="353" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#login#0;class#ParentController#0" />
-            <element signature="method#register#0;class#ParentController#0" />
-            <element signature="method#logout#0;class#ParentController#0" />
-            <element signature="method#myInfo#0;class#ParentController#0" />
-            <element signature="method#editParent#0;class#ParentController#0" />
-            <element signature="method#bindChild#0;class#ParentController#0" />
-            <element signature="e#9446#9454#0" expanded="true" />
-            <element signature="e#10632#10640#0" expanded="true" />
-            <element signature="e#12305#12313#0" expanded="true" />
-            <element signature="e#12609#12617#0" expanded="true" />
-            <element signature="e#12703#12719#0" expanded="true" />
-            <element signature="e#13053#13059#0" expanded="true" />
-            <element signature="e#13858#13866#0" expanded="true" />
-            <element signature="e#13999#14007#0" expanded="true" />
-            <element signature="e#14085#14101#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/model/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1506#1507#0" expanded="true" />
-            <element signature="e#1536#1537#0" expanded="true" />
-            <element signature="e#1579#1580#0" expanded="true" />
-            <element signature="e#1617#1618#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/model/Location.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
@@ -1117,26 +961,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="237" column="18" selection-start-line="237" selection-start-column="18" selection-end-line="237" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/util/CrawlerUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-237">
+          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1199#1200#0" expanded="true" />
+            <element signature="e#1226#1227#0" expanded="true" />
+            <element signature="e#1139#1155#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/parent/showData.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="168" column="5" selection-start-line="168" selection-start-column="5" selection-end-line="168" selection-end-column="5" />
+        <state relative-caret-position="250">
+          <caret line="170" column="36" selection-start-line="170" selection-start-column="36" selection-end-line="170" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/model/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#small#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#form#0;n#small#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#ul#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#ul#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#8137#10540#0#HTML" />
-            <element signature="e#10577#11636#0#HTML" />
-            <element signature="e#11673#12734#0#HTML" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1506#1507#0" expanded="true" />
+            <element signature="e#1536#1537#0" expanded="true" />
+            <element signature="e#1579#1580#0" expanded="true" />
+            <element signature="e#1617#1618#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/controller/ParentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="353" column="60" selection-start-line="353" selection-start-column="60" selection-end-line="353" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#login#0;class#ParentController#0" />
+            <element signature="method#register#0;class#ParentController#0" />
+            <element signature="method#logout#0;class#ParentController#0" />
+            <element signature="method#myInfo#0;class#ParentController#0" />
+            <element signature="method#editParent#0;class#ParentController#0" />
+            <element signature="method#bindChild#0;class#ParentController#0" />
           </folding>
         </state>
       </provider>
