@@ -155,13 +155,16 @@ public class UserController {
         Date endTime = new Date(Long.parseLong(request.getParameter("endTime")));
         List<UseState> useStateList = useStateService.getUseStateByUserIdAndDate(userId,startTime,endTime);
         ObjectMapper mapper = new ObjectMapper();
-        String useStates = mapper.writeValueAsString(useStateList);
-        List<String> appPackage = new ArrayList<String>();
-        for(UseState useState:useStateList){
-            appPackage.add(appService.getAppPackageByAppId(useState.getAppId()));
+        List<Object> packageAndUseStateList = new ArrayList<Object>();
+        for(UseState useState : useStateList){
+            Object packageAndUseState[] = new Object[2];
+            String packageName = appService.getAppPackageByAppId(useState.getAppId());
+            packageAndUseState[0] = packageName;
+            packageAndUseState[1] = useState;
+            packageAndUseStateList.add(packageAndUseState);
         }
-        String appPackages = mapper.writeValueAsString(appPackage);
-        response.getWriter().print(useStates+"_"+appPackages);
+        String useStates = mapper.writeValueAsString(packageAndUseStateList);
+        response.getWriter().print(useStates);
     }
 
     @RequestMapping("getAllUseStates")
@@ -169,13 +172,16 @@ public class UserController {
         int userId = Integer.parseInt(request.getParameter("userId"));
         List<UseState> useStateList = useStateService.getUseStateByUserId(userId);
         ObjectMapper mapper = new ObjectMapper();
-        String useStates = mapper.writeValueAsString(useStateList);
-        List<String> appPackage = new ArrayList<String>();
-        for(UseState useState:useStateList){
-            appPackage.add(appService.getAppPackageByAppId(useState.getAppId()));
+        List<Object> packageAndUseStateList = new ArrayList<Object>();
+        for(UseState useState : useStateList){
+            Object packageAndUseState[] = new Object[2];
+            String packageName = appService.getAppPackageByAppId(useState.getAppId());
+            packageAndUseState[0] = packageName;
+            packageAndUseState[1] = useState;
+            packageAndUseStateList.add(packageAndUseState);
         }
-        String appPackages = mapper.writeValueAsString(appPackage);
-        response.getWriter().print(useStates+"_"+appPackages);
+        String useStates = mapper.writeValueAsString(packageAndUseStateList);
+        response.getWriter().print(useStates);
     }
 
 

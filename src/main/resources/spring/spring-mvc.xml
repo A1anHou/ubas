@@ -77,10 +77,24 @@
 
     <mvc:interceptors>
         <mvc:interceptor>
+            <mvc:mapping path="/**/*"/>
+            <bean class="com.alan.interceptor.MethodRuntimeCountInterceptor">
+
+            </bean>
+        </mvc:interceptor>
+        <mvc:interceptor>
             <mvc:mapping path="/adminl/**/*"/>
             <!--排除登录页面-->
             <mvc:exclude-mapping path="login"/>
             <bean class="com.alan.interceptor.AdminSessionInterceptor">
+
+            </bean>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/parentl/**/*"/>
+            <!--排除登录页面-->
+            <mvc:exclude-mapping path="login"/>
+            <bean class="com.alan.interceptor.ParentSessionInterceptor">
 
             </bean>
         </mvc:interceptor>
