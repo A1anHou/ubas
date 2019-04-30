@@ -10,8 +10,8 @@ import java.util.Map;
 
 
 public class CrawlerUtil implements PageProcessor {
-    String type = "";
-    String icon = "";
+    static String type = "";
+    static String icon = "";
 
     // setSleepTime: 抓取的时间间隔 setRetryTimes: 重试的次数
     private Site site = Site.me().setRetryTimes(5).setSleepTime(10);
@@ -31,7 +31,7 @@ public class CrawlerUtil implements PageProcessor {
         return site;
     }
 
-    public Map<String,String> getTypeAndIcon(String packageName){
+    public static Map<String,String> getTypeAndIcon(String packageName){
         String url = "https://sj.qq.com/myapp/detail.htm?apkName="+packageName;
         Spider.create(new CrawlerUtil()).addUrl(url).thread(5).run();
         Map<String,String> resultMap = new HashMap<String, String>();

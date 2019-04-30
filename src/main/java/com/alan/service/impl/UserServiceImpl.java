@@ -18,7 +18,7 @@ import java.util.List;
 @Service
 @Transactional(rollbackFor = Exception.class)
 public class UserServiceImpl implements UserService {
-    
+
     @Autowired
     private UserDao userDao;
 
@@ -30,6 +30,21 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUserByTel(long userTel) {
         return userDao.selectUserByTel(userTel);
+    }
+
+    @Override
+    public void addUser(long userTel, String userName, String userPwd, Date userBirthday, int userGender, String userJob, Date userRegTime) {
+        userDao.insertUser(userTel,userName,userPwd,userBirthday,userGender,userJob,userRegTime);
+    }
+
+    @Override
+    public void editUserInfo(int userId, long userTel, String userJob) {
+        userDao.updateUserInfo(userId,userTel,userJob);
+    }
+
+    @Override
+    public void editUserPwd(int userId, String userPwd) {
+        userDao.updateUserPwd(userId,userPwd);
     }
 
     @Override

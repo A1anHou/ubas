@@ -25,4 +25,10 @@ public interface UserDao {
     int selectUserNumByDate(@Param("startTime")Date startTime, @Param("endTime")Date endTime);
 
     User selectUserByTel(long userTel);
+
+    void insertUser(@Param("userTel")long userTel, @Param("userName")String userName, @Param("userPwd")String userPwd, @Param("userBirthday")Date userBirthday, @Param("userGender")int userGender, @Param("userJob")String userJob,@Param("userRegTime") Date userRegTime);
+
+    void updateUserInfo(@Param("userId")int userId, @Param("userTel")long userTel, @Param("userJob")String userJob);
+
+    void updateUserPwd(@Param("userId")int userId, @Param("userPwd")String userPwd);
 }

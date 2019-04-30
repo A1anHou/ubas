@@ -19,4 +19,10 @@ public interface AppService {
     int getAppNumByDate(Date date, Date needTime);
 
     App getAppById(int appId);
+
+    int getAppIdByPackage(String appPackage);
+
+    void addApp(String appName, String appPackage, String appType, String appIcon, Date appAddTime);
+
+    String getAppPackageByAppId(int appId);
 }

@@ -20,4 +20,14 @@ public class UnlockServiceImpl implements UnlockService {
     public List<Unlock> getUnlockByUserIdAndDate(int userId, Date startTime, Date endTime) {
         return unlockDao.selectUnlockByUserIdAndDate(userId,startTime,endTime);
     }
+
+    @Override
+    public void addUnlock(int userId, Date unlockTime) {
+        unlockDao.insertUnlock(userId,unlockTime);
+    }
+
+    @Override
+    public List<Unlock> getLocationByUserId(int userId) {
+        return unlockDao.selectUnlockByUserId(userId);
+    }
 }

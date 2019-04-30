@@ -20,4 +20,10 @@ public interface UserService {
     User getUserById(int userId);
 
     User getUserByTel(long userTel);
+
+    void addUser(long userTel, String userName, String userPwd, Date userBirthday, int userGender, String userJob, Date userRegTime);
+
+    void editUserInfo(int userId, long userTel, String userJob);
+
+    void editUserPwd(int userId, String userPwd);
 }

@@ -10,6 +10,10 @@
         <result column="app_icon" property="appIcon"/>
         <result column="app_add_time" property="appAddTime"/>
     </resultMap>
+    <insert id="insertApp">
+        INSERT INTO application(app_name,app_package,app_type,app_icon,app_add_time)
+        VALUES (#{appName},#{appPackage},#{appType},#{appIcon},#{appAddTime})
+    </insert>
     <update id="updateAppCategory">
         UPDATE application
         SET app_category = #{appType}
@@ -39,6 +43,14 @@
     </select>
     <select id="selectAppById" parameterType="java.lang.Integer" resultMap="AppBaseMap">
         SELECT * FROM application
+        WHERE app_id = #{appId}
+    </select>
+    <select id="selectAppIdByPackage" resultType="java.lang.Integer">
+        SELECT IFFULL(MAX(app_id),0) AS app_id FROM application
+        WHERE app_package = #{appPackage}
+    </select>
+    <select id="selectAppPackageByAppId" parameterType="java.lang.Integer" resultType="java.lang.String">
+        SELECT app_package FROM application
         WHERE app_id = #{appId}
     </select>
 

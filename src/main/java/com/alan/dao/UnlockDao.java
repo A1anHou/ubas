@@ -10,4 +10,8 @@ import java.util.List;
 @Repository
 public interface UnlockDao {
     List<Unlock> selectUnlockByUserIdAndDate(@Param("userId")int userId, @Param("startTime")Date startTime, @Param("endTime")Date endTime);
+
+    void insertUnlock(@Param("userId")int userId, @Param("unlockTime")Date unlockTime);
+
+    List<Unlock> selectUnlockByUserId(int userId);
 }

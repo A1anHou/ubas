@@ -20,4 +20,14 @@ public class LocationServiceImpl implements LocationService {
     public List<Location> getLocationByUserIdAndDate(int userId, Date startTime, Date endTime) {
         return locationDao.selectLocationByUserIdAndDate(userId,startTime,endTime);
     }
+
+    @Override
+    public void addLocation(int userId, double longitude, double latitude, Date startTime, Date endTime) {
+        locationDao.insertLocation(userId,longitude,latitude,startTime,endTime);
+    }
+
+    @Override
+    public List<Location> getLocationByUserId(int userId) {
+        return locationDao.selectLocationByUserId(userId);
+    }
 }

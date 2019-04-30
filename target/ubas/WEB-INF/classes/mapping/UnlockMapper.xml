@@ -6,9 +6,17 @@
         <result column="user_id" property="userId"/>
         <result column="unlock_time" property="unlockTime"/>
     </resultMap>
+    <insert id="insertUnlock">
+        INSERT INTO unlock_state(user_id,unlock_time)
+        VALUES (#{userId},#{unlockTime})
+    </insert>
     <select id="selectUnlockByUserIdAndDate" resultMap="UnlockBaseMap">
         SELECT * FROM unlock_state
         WHERE user_id = #{userId}
         AND unlock_time BETWEEN #{startTime} AND #{endTime}
+    </select>
+    <select id="selectUnlockByUserId" parameterType="java.lang.Integer" resultMap="UnlockBaseMap">
+        SELECT * FROM unlock_state
+        WHERE user_id = #{userId}
     </select>
 </mapper>

@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.alan.dao.UseStateDao">
-    <resultMap id="UserStateBaseMap" type="com.alan.model.UseState">
+    <resultMap id="UseStateBaseMap" type="com.alan.model.UseState">
         <id column="use_state_id" property="useStateId"/>
         <id column="app_id" property="appId"/>
         <id column="user_id" property="userId"/>
         <id column="start_time" property="startTime"/>
         <id column="end_time" property="endTime"/>
     </resultMap>
-    <select id="selectUseStateByUserIdAndDate" resultMap="UserStateBaseMap">
+    <insert id="insertUseState">
+      INSERT INTO use_state(app_id,user_id,start_time,end_time)
+      VALUES (#{appId},#{userId},#{startTime},#{endTime})
+    </insert>
+    <select id="selectUseStateByUserIdAndDate" resultMap="UseStateBaseMap">
         SELECT * FROM use_state
         WHERE user_id = #{userId}
         AND start_time &gt;= #{startTime}
         AND end_time &lt;= #{endTime}
+    </select>
+    <select id="selectUseStateByUserId" parameterType="java.lang.Integer" resultMap="UseStateBaseMap">
+        SELECT * FROM use_state
+        WHERE user_id = #{userId}
     </select>
 
 </mapper>

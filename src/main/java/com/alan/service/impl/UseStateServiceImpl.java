@@ -20,4 +20,14 @@ public class UseStateServiceImpl implements UseStateService {
     public List<UseState> getUseStateByUserIdAndDate(int userId, Date startTime, Date endTime) {
         return useStateDao.selectUseStateByUserIdAndDate(userId,startTime,endTime);
     }
+
+    @Override
+    public List<UseState> getUseStateByUserId(int userId) {
+        return useStateDao.selectUseStateByUserId(userId);
+    }
+
+    @Override
+    public void addUseState(int userId, int appId, Date startTime, Date endTime) {
+        useStateDao.insertUseState(userId,appId,startTime,endTime);
+    }
 }

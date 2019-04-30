@@ -9,10 +9,18 @@
         <id column="start_time" property="startTime"/>
         <id column="end_time" property="endTime"/>
     </resultMap>
+    <insert id="insertLocation">
+        INSERT INTO location(user_id,longitude,latitude,start_time,end_time)
+        VALUES (#{userId},#{longitude},#{latitude},#{startTime},#{endTime})
+    </insert>
     <select id="selectLocationByUserIdAndDate" resultMap="LocationBaseMap">
         SELECT * FROM location
         WHERE user_id = #{userId}
         AND start_time &gt;= #{startTime}
         AND end_time &lt;= #{endTime}
+    </select>
+    <select id="selectLocationByUserId" parameterType="java.lang.Integer" resultMap="LocationBaseMap">
+        SELECT * FROM location
+        WHERE user_id = #{userId}
     </select>
 </mapper>

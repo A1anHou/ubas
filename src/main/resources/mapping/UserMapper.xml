@@ -12,6 +12,20 @@
         <result column="user_job" property="userJob"/>
         <result column="user_reg_time" property="userRegTime"/>
     </resultMap>
+    <insert id="insertUser">
+        INSERT INTO user(user_tel,user_name,user_password,user_birthday,user_gender,user_job,user_reg_time)
+        VALUES (#{userTel},#{userName},#{userPwd},#{userBirthday},#{userGender},#{userJob},#{userRegTime})
+    </insert>
+    <update id="updateUserInfo">
+        UPDATE user
+        SET user_tel = #{userTel},user_job = #{userJob}
+        WHERE user_id = #{userId}
+    </update>
+    <update id="updateUserPwd">
+        UPDATE user
+        SET user_password = #{userPwd}
+        WHERE user_id = #{userId}
+    </update>
 
     <select id="selectUserById" parameterType="java.lang.Integer" resultMap="UserBaseMap">
         SELECT * FROM user

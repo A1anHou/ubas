@@ -22,4 +22,10 @@ public interface AppDao {
     int selectAppNumByDate(@Param("startTime")Date startTime, @Param("endTime")Date endTime);
 
     App selectAppById(int appId);
+
+    int selectAppIdByPackage(String appPackage);
+
+    void insertApp(@Param("appName")String appName, @Param("appPackage")String appPackage, @Param("appType")String appType, @Param("appIcon")String appIcon, @Param("appAddTime")Date appAddTime);
+
+    String selectAppPackageByAppId(int appId);
 }

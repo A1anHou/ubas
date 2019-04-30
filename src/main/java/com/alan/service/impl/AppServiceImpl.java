@@ -51,4 +51,19 @@ public class AppServiceImpl implements AppService {
         return appDao.selectAppById(appId);
     }
 
+    @Override
+    public int getAppIdByPackage(String appPackage) {
+        return appDao.selectAppIdByPackage(appPackage);
+    }
+
+    @Override
+    public void addApp(String appName, String appPackage, String appType, String appIcon, Date appAddTime) {
+        appDao.insertApp(appName,appPackage,appType,appIcon,appAddTime);
+    }
+
+    @Override
+    public String getAppPackageByAppId(int appId) {
+        return appDao.selectAppPackageByAppId(appId);
+    }
+
 }
