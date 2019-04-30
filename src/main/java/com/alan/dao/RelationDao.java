@@ -20,4 +20,6 @@ public interface RelationDao {
     void insertRelation(@Param("parentId")int parentId, @Param("userId")int userId, @Param("relationship")String relationship, @Param("relateTime")Date relateTime);
 
     void deleteRelation(int relationId);
+
+    List<Relation> selectRelationByUserId(int userId);
 }

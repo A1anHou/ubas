@@ -46,4 +46,9 @@ public class RelationServiceImpl implements RelationService {
     public void delRelation(int relationId) {
         relationDao.deleteRelation(relationId);
     }
+
+    @Override
+    public List<Relation> getRelationByUserId(int userId) {
+        return relationDao.selectRelationByUserId(userId);
+    }
 }

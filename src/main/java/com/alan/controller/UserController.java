@@ -1,10 +1,7 @@
 package com.alan.controller;
 
-import com.alan.model.Location;
-import com.alan.model.Unlock;
-import com.alan.model.UseState;
+import com.alan.model.*;
 import com.alan.service.*;
-import com.alan.model.User;
 import com.alan.util.CrawlerUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -256,7 +253,20 @@ public class UserController {
     }
 
     @RequestMapping("getParents")
-    public void getParents(HttpServletRequest request,HttpServletResponse response){
-
+    public void getParents(HttpServletRequest request,HttpServletResponse response) throws IOException {
+        int userId = Integer.parseInt(request.getParameter("userId"));
+        List<Relation> relationList = relationService.getRelationByUserId(userId);
+        List<Object> parentAndRelationList = new ArrayList<Object>();
+        for(Relation relation : relationList){
+            Object parentAndRelation[] = new Object[2];
+            Parent parent = parentService.getParentById(relation.getParentId());
+            parent.setParentPwd("");
+            parentAndRelation[0] = parent;
+            parentAndRelation[1] = relation;
+            parentAndRelationList.add(parentAndRelation);
+        }
+        ObjectMapper mapper = new ObjectMapper();
+        String parents = mapper.writeValueAsString(parentAndRelationList);
+        response.getWriter().print(parents);
     }
 }

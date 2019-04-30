@@ -17,4 +17,6 @@ public interface RelationService {
     void addRelation(int parentId, int userId, String relationship, Date relateTime);
 
     void delRelation(int relationId);
+
+    List<Relation> getRelationByUserId(int userId);
 }

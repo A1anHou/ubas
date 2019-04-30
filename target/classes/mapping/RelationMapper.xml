@@ -34,4 +34,8 @@
         WHERE parent_id = #{parentId}
         AND user_id = #{userId}
     </select>
+    <select id="selectRelationByUserId" parameterType="java.lang.Integer" resultMap="RelationBaseMap">
+        SELECT * FROM relation
+        WHERE user_id = #{userId}
+    </select>
 </mapper>
