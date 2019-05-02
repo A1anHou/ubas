@@ -68,12 +68,19 @@ public class UserController {
         int userId = Integer.parseInt(request.getParameter("userId"));
         long userTel = Long.parseLong(request.getParameter("userTel"));
         String userJob = request.getParameter("userJob");
-        if(userService.getUserById(userId)!=null){
-            User user = userService.getUserByTel(userTel);
-            if((user!=null)&&(user.getUserId()!=userId)){
+        User userById = userService.getUserById(userId);
+        if(userById!=null){
+            User userByTel = userService.getUserByTel(userTel);
+            if((userByTel!=null)&&(userByTel.getUserId()!=userId)){
                 response.getWriter().print("该手机号已存在");
             }else{
                 userService.editUserInfo(userId,userTel,userJob);
+                if(userById.getUserTel()!=userTel){
+                    userService.recordEdit(userId,"user_tel",String.valueOf(userById.getUserTel()),String.valueOf(userTel),new Date());
+                }
+                if(!userById.getUserJob().equals(userJob)){
+                    userService.recordEdit(userId,"user_job",userById.getUserJob(),userJob,new Date());
+                }
                 response.getWriter().print("修改成功");
             }
         }else {
@@ -90,6 +97,7 @@ public class UserController {
             if (oldPwd.equals(user.getUserPwd())) {
                 String userPwd = request.getParameter("userPwd");
                 userService.editUserPwd(userId, userPwd);
+                userService.recordEdit(userId,"user_pwd",oldPwd,userPwd,new Date());
                 response.getWriter().print("修改成功");
             } else {
                 response.getWriter().print("原密码错误");
@@ -134,14 +142,15 @@ public class UserController {
                 Map<String,String> typeAndIcon =  CrawlerUtil.getTypeAndIcon(appPackage);
                 String appType = typeAndIcon.get("type");
                 String appIcon = typeAndIcon.get("icon");
+                int submitUserId = userId;
                 if(appType.equals("")){
                     appType = "未分类";
                 }
                 if(appIcon.equals("")){
-                    appIcon = "";
+                    appIcon = "${path}/static/custom/image/application_default.png";
                 }
                 Date appAddTime = new Date();
-                appService.addApp(appName,appPackage,appType,appIcon,appAddTime);
+                appService.addApp(appName,appPackage,appType,appIcon,appAddTime,submitUserId);
             }
             useStateService.addUseState(userId,appId,startTime,endTime);
         }

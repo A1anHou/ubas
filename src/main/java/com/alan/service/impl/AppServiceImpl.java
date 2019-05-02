@@ -1,6 +1,7 @@
 package com.alan.service.impl;
 
 import com.alan.dao.AppDao;
+import com.alan.dao.EditAppDao;
 import com.alan.model.App;
 import com.alan.service.AppService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import java.util.List;
 public class AppServiceImpl implements AppService {
     @Autowired
     private AppDao appDao;
+    private EditAppDao editAppDao;
 
     @Override
     public List<App> getAllApp() {
@@ -57,13 +59,18 @@ public class AppServiceImpl implements AppService {
     }
 
     @Override
-    public void addApp(String appName, String appPackage, String appType, String appIcon, Date appAddTime) {
-        appDao.insertApp(appName,appPackage,appType,appIcon,appAddTime);
+    public void addApp(String appName, String appPackage, String appType, String appIcon, Date appAddTime,int submitUserId) {
+        appDao.insertApp(appName,appPackage,appType,appIcon,appAddTime,submitUserId);
     }
 
     @Override
     public String getAppPackageByAppId(int appId) {
         return appDao.selectAppPackageByAppId(appId);
+    }
+
+    @Override
+    public void recordEdit(int appId, String appAttr, String appOld, String appNew, int optAdminId, Date appChangeTime) {
+        editAppDao.insertEditRecord(appId,appAttr,appOld,appNew,optAdminId,appChangeTime);
     }
 
 }

@@ -26,4 +26,6 @@ public interface UserService {
     void editUserInfo(int userId, long userTel, String userJob);
 
     void editUserPwd(int userId, String userPwd);
+
+    void recordEdit(int userId, String userAttr, String userOld, String userNew, Date userChangeTime);
 }

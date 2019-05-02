@@ -19,4 +19,6 @@ public interface ParentService {
     void editParentTel(int parentId, long parentTel);
 
     void editParentPwd(int parentId, String parentPwd);
+
+    void recordEdit(int parentId, String parent_pwd, String oldPwd, String parentPwd, Date date);
 }

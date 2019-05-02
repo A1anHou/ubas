@@ -85,11 +85,11 @@ public class AdminController {
         int appNum[] = new int[7];
         for (int i = 0; i < 7; i++) {
             Date date = new Date(System.currentTimeMillis() - 1000 * 60 * 60 * 24 * (6 - i));
-            lastWeek[i] = DateUtil.getNeedTime(date,0,0,0,0);
+            lastWeek[i] = DateUtil.getNeedTime(date, 0, 0, 0, 0);
         }
         for (int i = 0; i < 7; i++) {
-            userNum[i]=userService.getUserNumByDate(lastWeek[i],DateUtil.getNeedTime(lastWeek[i],23,59,59,0));
-            appNum[i]=appService.getAppNumByDate(lastWeek[i],DateUtil.getNeedTime(lastWeek[i],23,59,59,0));
+            userNum[i] = userService.getUserNumByDate(lastWeek[i], DateUtil.getNeedTime(lastWeek[i], 23, 59, 59, 0));
+            appNum[i] = appService.getAppNumByDate(lastWeek[i], DateUtil.getNeedTime(lastWeek[i], 23, 59, 59, 0));
         }
         SimpleDateFormat sp = new SimpleDateFormat("MM/dd");
         String lastSevenDays = "[";
@@ -97,8 +97,8 @@ public class AdminController {
         String newApp = "[";
         for (int i = 0; i < 7; i++) {
             lastSevenDays += "'" + sp.format(lastWeek[i]) + "',";
-            newUser +=  userNum[i] +",";
-            newApp +=  appNum[i] +",";
+            newUser += userNum[i] + ",";
+            newApp += appNum[i] + ",";
         }
         lastSevenDays += "]";
         newUser += "]";
@@ -164,7 +164,7 @@ public class AdminController {
     @RequestMapping("/addAdmin")
     @ResponseBody
     public Map<String, String> addAdmin(@RequestParam long adminTel, @RequestParam String adminName,
-                                        @RequestParam String adminPwd) {
+                                        @RequestParam String adminPwd,HttpSession session) {
         Map<String, String> res = new HashMap<>();
         if (adminService.getAdminByTel(adminTel) != null) {
             res.put("status", "2");
@@ -174,6 +174,9 @@ public class AdminController {
             Date adminRegTime = new Date();
             adminPwd = DigestUtils.md5Hex(adminPwd);
             adminService.addAdmin(adminTel, adminName, adminPwd, adminRegTime);
+            Admin admin = adminService.getAdminByTel(adminTel);
+            Admin optAdmin = (Admin)session.getAttribute("SESSION_USER");
+            adminService.recordEdit(admin.getAdminId(), "add_admin", null, null,optAdmin.getAdminId(),new Date());
             res.put("status", "1");
             res.put("message", "添加成功");
             return res;
@@ -182,8 +185,10 @@ public class AdminController {
 
     //删
     @RequestMapping("/delApp")
-    public String delApp(@RequestParam int appId) {
+    public String delApp(@RequestParam int appId, HttpSession session) {
+        Admin optAdmin = (Admin)session.getAttribute("SESSION_USER");
         appService.delApp(appId);
+        appService.recordEdit(appId,"del_app",null,null,optAdmin.getAdminId(),new Date());
         return "forward:/admin/app";
     }
 
@@ -191,12 +196,15 @@ public class AdminController {
     public String delAdmin(HttpServletRequest request) {
         int adminId = Integer.parseInt(request.getParameter("adminId"));
         HttpSession session = request.getSession();
-        if (adminId == ((Admin) session.getAttribute("SESSION_USER")).getAdminId()) {
+        Admin optAdmin = (Admin) session.getAttribute("SESSION_USER");
+        if (adminId == optAdmin.getAdminId()) {
             adminService.delAdmin(adminId);
+            adminService.recordEdit(adminId, "del_admin", null, null,optAdmin.getAdminId(),new Date());
             session.setAttribute("SESSION_USER", null);
             return "admin/login";
         } else {
             adminService.delAdmin(adminId);
+            adminService.recordEdit(adminId, "del_admin", null, null,optAdmin.getAdminId(),new Date());
             return "forward:/admin/admin";
         }
     }
@@ -211,9 +219,12 @@ public class AdminController {
 
     @RequestMapping("/editApp")
     @ResponseBody
-    public Map<String, String> editApp(@RequestParam int appId, @RequestParam String appType) {
+    public Map<String, String> editApp(@RequestParam int appId, @RequestParam String appType,HttpSession session) {
         Map<String, String> res = new HashMap<>();
+        Admin optAdmin = (Admin)session.getAttribute("SESSION_USER");
+        App app = appService.getAppById(appId);
         appService.editAppType(appId, appType);
+        appService.recordEdit(appId,"app_type",app.getAppType(),appType,optAdmin.getAdminId(),new Date());
         res.put("status", "1");
         res.put("message", "修改成功");
         return res;
@@ -221,10 +232,12 @@ public class AdminController {
 
     @RequestMapping("/editAdmin")
     @ResponseBody
-    public Map<String, String> editAdmin(HttpServletRequest request) {
+    public Map<String, String> editAdmin(HttpServletRequest request,HttpSession session) {
         Map<String, String> res = new HashMap<>();
         int editType = Integer.parseInt(request.getParameter("editType"));
         int adminId = Integer.parseInt(request.getParameter("adminId"));
+        Admin optAdmin = (Admin)session.getAttribute("SESSION_USER");
+        Admin admin = adminService.getAdminById(adminId);
         if (editType == 0) {//修改电话
             long adminTel = Long.parseLong(request.getParameter("adminTel"));
             if (adminService.getAdminByTel(adminTel) != null) {
@@ -233,6 +246,7 @@ public class AdminController {
                 return res;
             } else {
                 adminService.editAdminTel(adminId, adminTel);
+                adminService.recordEdit(adminId, "admin_tel", String.valueOf(admin.getAdminTel()), String.valueOf(adminTel),optAdmin.getAdminId(),new Date());
                 res.put("status", "1");
                 res.put("message", "修改成功");
                 return res;
@@ -244,6 +258,7 @@ public class AdminController {
                 String adminPwd = request.getParameter("adminPwd");
                 adminPwd = DigestUtils.md5Hex(adminPwd);
                 adminService.editAdminPwd(adminId, adminPwd);
+                adminService.recordEdit(adminId, "admin_pwd", admin.getAdminPwd(), adminPwd,optAdmin.getAdminId(),new Date());
                 res.put("status", "1");
                 res.put("message", "修改成功");
                 return res;

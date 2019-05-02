@@ -1,6 +1,7 @@
 package com.alan.service.impl;
 
 import com.alan.dao.AdminDao;
+import com.alan.dao.EditAdminDao;
 import com.alan.model.Admin;
 import com.alan.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ import java.util.List;
 public class AdminServiceImpl implements AdminService {
     @Autowired
     AdminDao adminDao;
+    @Autowired
+    EditAdminDao editAdminDao;
 
     @Override
     public Admin getAdminByTel(long adminTel) {
@@ -54,5 +57,10 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public List<Admin> getAdminByIdOrName(String keyword) {
         return adminDao.selectAdminByIdOrName(keyword);
+    }
+
+    @Override
+    public void recordEdit(int adminId, String adminAttr, String adminOld, String adminNew, int optAdminId, Date adminChangeTime) {
+        editAdminDao.insertEditRecord(adminId,adminAttr,adminOld,adminNew,optAdminId,adminChangeTime);
     }
 }

@@ -11,8 +11,8 @@
         <result column="app_add_time" property="appAddTime"/>
     </resultMap>
     <insert id="insertApp">
-        INSERT INTO application(app_name,app_package,app_type,app_icon,app_add_time)
-        VALUES (#{appName},#{appPackage},#{appType},#{appIcon},#{appAddTime})
+        INSERT INTO application(app_name,app_package,app_type,app_icon,app_add_time,submit_user_id)
+        VALUES (#{appName},#{appPackage},#{appType},#{appIcon},#{appAddTime},#{submitUserId})
     </insert>
     <update id="updateAppCategory">
         UPDATE application

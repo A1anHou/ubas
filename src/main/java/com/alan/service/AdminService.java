@@ -15,11 +15,13 @@ public interface AdminService {
 
     void delAdmin(int adminId);
 
-    void editAdminTel(int adminId,long adminTel);
+    void editAdminTel(int adminId, long adminTel);
 
     void editAdminPwd(int adminId, String adminPwd);
 
     void addAdmin(long adminTel, String adminName, String adminPwd, Date adminRegTime);
 
     List<Admin> getAdminByIdOrName(String keyword);
+
+    void recordEdit(int adminId, String adminAttr, String adminOld, String adminNew, int optAdminId, Date adminChangeTime);
 }

@@ -139,12 +139,14 @@ public class ParentController {
         int parentId = Integer.parseInt(request.getParameter("parentId"));
         if (editType == 0) {//修改电话
             long parentTel = Long.parseLong(request.getParameter("parentTel"));
+            Parent parent = parentService.getParentById(parentId);
             if (parentService.getParentByTel(parentTel) != null) {
                 res.put("status", "2");
                 res.put("message", "该手机号已存在");
                 return res;
             } else {
                 parentService.editParentTel(parentId, parentTel);
+                parentService.recordEdit(parentId,"parent_tel",String.valueOf(parent.getParentTel()),String.valueOf(parentTel),new Date());
                 res.put("status", "1");
                 res.put("message", "修改成功");
                 return res;
@@ -156,6 +158,7 @@ public class ParentController {
                 String parentPwd = request.getParameter("parentPwd");
                 parentPwd = DigestUtils.md5Hex(parentPwd);
                 parentService.editParentPwd(parentId, parentPwd);
+                parentService.recordEdit(parentId,"parent_pwd",oldPwd,parentPwd,new Date());
                 res.put("status", "1");
                 res.put("message", "修改成功");
                 return res;

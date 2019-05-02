@@ -25,7 +25,7 @@ public interface AppDao {
 
     int selectAppIdByPackage(String appPackage);
 
-    void insertApp(@Param("appName")String appName, @Param("appPackage")String appPackage, @Param("appType")String appType, @Param("appIcon")String appIcon, @Param("appAddTime")Date appAddTime);
+    void insertApp(@Param("appName")String appName, @Param("appPackage")String appPackage, @Param("appType")String appType, @Param("appIcon")String appIcon, @Param("appAddTime")Date appAddTime, @Param("submitUserId")int submitUserId);
 
     String selectAppPackageByAppId(int appId);
 }

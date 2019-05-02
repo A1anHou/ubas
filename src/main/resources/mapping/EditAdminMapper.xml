@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.alan.dao.EditAdminDao">
+
+    <insert id="insertEditRecord">
+        INSERT INTO edit_admin(admin_id,admin_attr,admin_old,admin_new,opt_admin_id,admin_change_time)
+        VALUES (#{adminId},#{adminAttr},#{adminOld},#{adminNew},#{optAdminId},#{adminChangeTime})
+    </insert>
+</mapper>

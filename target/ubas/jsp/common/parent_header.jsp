@@ -12,7 +12,7 @@
     <ul class="layui-nav layui-layout-right">
         <li class="layui-nav-item">
             <a href="javascript:;">
-                <img src="${path}/static/custom/image/admin.png" class="layui-nav-img">
+                <img src="${path}/static/custom/image/parent.png" class="layui-nav-img">
                 ${sessionScope.SESSION_USER.parentName}
             </a>
             <dl class="layui-nav-child">

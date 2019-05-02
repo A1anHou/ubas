@@ -1,5 +1,6 @@
 package com.alan.service.impl;
 
+import com.alan.dao.EditUserDao;
 import com.alan.dao.UserDao;
 import com.alan.model.User;
 import com.alan.service.UserService;
@@ -21,6 +22,8 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private EditUserDao editUserDao;
 
     @Override
     public User getUserById(int userId) {
@@ -45,6 +48,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public void editUserPwd(int userId, String userPwd) {
         userDao.updateUserPwd(userId,userPwd);
+    }
+
+    @Override
+    public void recordEdit(int userId, String userAttr, String userOld, String userNew, Date userChangeTime) {
+        editUserDao.insertEditRecord(userId,userAttr,userOld,userNew,userChangeTime);
     }
 
     @Override

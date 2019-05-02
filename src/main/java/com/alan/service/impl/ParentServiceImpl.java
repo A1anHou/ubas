@@ -1,5 +1,6 @@
 package com.alan.service.impl;
 
+import com.alan.dao.EditParentDao;
 import com.alan.dao.ParentDao;
 import com.alan.model.Parent;
 import com.alan.service.ParentService;
@@ -15,6 +16,8 @@ import java.util.List;
 public class ParentServiceImpl implements ParentService {
     @Autowired
     private ParentDao parentDao;
+    @Autowired
+    private EditParentDao editParentDao;
 
     @Override
     public List<Parent> getAllParent() {
@@ -49,5 +52,10 @@ public class ParentServiceImpl implements ParentService {
     @Override
     public void editParentPwd(int parentId, String parentPwd) {
         parentDao.updateParentPwd(parentId,parentPwd);
+    }
+
+    @Override
+    public void recordEdit(int parentId, String parentAttr, String parentOld, String parentNew, Date parentChangeTime) {
+        editParentDao.insertEditRecord(parentId,parentAttr,parentOld,parentNew,parentChangeTime);
     }
 }

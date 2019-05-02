@@ -22,7 +22,9 @@ public interface AppService {
 
     int getAppIdByPackage(String appPackage);
 
-    void addApp(String appName, String appPackage, String appType, String appIcon, Date appAddTime);
+    void addApp(String appName, String appPackage, String appType, String appIcon, Date appAddTime,int submitUserId);
 
     String getAppPackageByAppId(int appId);
+
+    void recordEdit(int appId, String appAttr, String appOld, String appNew, int optAdminId, Date appChangeTime);
 }
