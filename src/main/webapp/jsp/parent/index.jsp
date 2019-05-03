@@ -13,6 +13,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>用户行为分析系统 | 家长</title>
+    <link rel="shortcut icon" href="${path}/static/custom/image/favicon.ico" />
+    <link rel="bookmark"href="${path}/static/custom/image/favicon.ico" />
     <!--引入CSS-->
     <link rel="stylesheet" href="${path}/static/plugins/layui/css/layui.css">
 </head>

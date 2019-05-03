@@ -146,7 +146,7 @@ public class ParentController {
                 return res;
             } else {
                 parentService.editParentTel(parentId, parentTel);
-                parentService.recordEdit(parentId,"parent_tel",String.valueOf(parent.getParentTel()),String.valueOf(parentTel),new Date());
+                parentService.recordEdit(parentId, "parent_tel", String.valueOf(parent.getParentTel()), String.valueOf(parentTel), new Date());
                 res.put("status", "1");
                 res.put("message", "修改成功");
                 return res;
@@ -158,7 +158,7 @@ public class ParentController {
                 String parentPwd = request.getParameter("parentPwd");
                 parentPwd = DigestUtils.md5Hex(parentPwd);
                 parentService.editParentPwd(parentId, parentPwd);
-                parentService.recordEdit(parentId,"parent_pwd",oldPwd,parentPwd,new Date());
+                parentService.recordEdit(parentId, "parent_pwd", oldPwd, parentPwd, new Date());
                 res.put("status", "1");
                 res.put("message", "修改成功");
                 return res;
@@ -334,6 +334,21 @@ public class ParentController {
             }
         }
 
+        Collections.sort(typeList, new Comparator<Type>() {
+            @Override
+            public int compare(Type type1, Type type2) {
+                int useTime1 = type1.getTypeUseTime();
+                int useTime2 = type2.getTypeUseTime();
+                if (useTime1 == useTime2) {
+                    return 0;
+                } else if (useTime1 > useTime2) {
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }
+        });
+
         List<String> pieDataList2 = new ArrayList<String>();
         ChartHelper pieHelper2 = new ChartHelper();
         pieHelper.setName("类别名");
@@ -355,8 +370,8 @@ public class ParentController {
         location.setEndTime(new Date());
         locationList.add(location);
         SimpleDateFormat sf = new SimpleDateFormat("HH:mm");
-        for(Location location1 : locationList){
-            String locationDescription = "'"+sf.format(location.getStartTime())+"~"+sf.format(location.getEndTime())+"'";
+        for (Location location1 : locationList) {
+            String locationDescription = "'" + sf.format(location.getStartTime()) + "~" + sf.format(location.getEndTime()) + "'";
             location.setDescription(locationDescription);
         }
         model.addAttribute("user", user);
@@ -370,5 +385,201 @@ public class ParentController {
         model.addAttribute("totalUseTime", totalUseTime);
         model.addAttribute("typeList", typeList);
         return "parent/showData";
+    }
+
+    @RequestMapping("/showReport")
+    public String showReport(@RequestParam int userId, Model model, HttpSession session) throws JsonProcessingException {
+        int parentId = ((Parent) session.getAttribute("SESSION_USER")).getParentId();
+        if (relationService.getRelationByParentIdAndUserId(parentId, userId) == null) {
+            return "forward:/parent/index";
+        }
+        User user = userService.getUserById(userId);
+        user.setUserPwd("");
+        int currentYear = Calendar.getInstance().get(Calendar.YEAR) - 1900;
+        Date thisWeek[] = new Date[7];
+        Date lastWeek[] = new Date[7];
+        List<UseState> useStateThisWeek = new ArrayList<UseState>();
+        List<UseState> useStateLastWeek = new ArrayList<UseState>();
+        List<UseState> useStatesAll = useStateService.getUseStateByUserId(userId);
+        for (int i = 0; i < 7; i++) {
+            Date dateThisWeek = new Date(System.currentTimeMillis() - 1000 * 60 * 60 * 24 * (6 - i));
+            Date dateLastWeek = new Date(System.currentTimeMillis() - 1000 * 60 * 60 * 24 * (13 - i));
+            thisWeek[i] = DateUtil.getNeedTime(dateThisWeek, 0, 0, 0, 0);
+            lastWeek[i] = DateUtil.getNeedTime(dateLastWeek, 0, 0, 0, 0);
+        }
+        for (int i = 0; i < 7; i++) {
+            useStateThisWeek.addAll(useStateService.getUseStateByUserIdAndDate(userId,thisWeek[i], DateUtil.getNeedTime(thisWeek[i], 23, 59, 59, 0)));
+            useStateLastWeek.addAll( useStateService.getUseStateByUserIdAndDate(userId,lastWeek[i], DateUtil.getNeedTime(lastWeek[i], 23, 59, 59, 0)));
+        }
+        int totalUseTime = 0;
+        for (UseState useState : useStatesAll){
+            Date startMoment = useState.getStartTime();
+            Date endMoment = useState.getEndTime();
+            totalUseTime = totalUseTime + DateUtil.getDuration(startMoment,endMoment,startMoment,endMoment);
+        }
+        int totalDuringDay = DateUtil.getDuringDay(useStatesAll.get(0).getStartTime(),useStatesAll.get(useStatesAll.size()-1).getEndTime())+1;
+        int totalAverage = totalUseTime/totalDuringDay;
+
+        int thisWeekUseTime[] = new int[7];
+        int lastWeekUseTime[] = new int[7];
+        int thisWeekTotalUseTime = 0;
+        int lastWeekTotalUseTime = 0;
+        for(UseState useState: useStateThisWeek){
+            Date startMoment = useState.getStartTime();
+            Date endMoment = useState.getEndTime();
+            for(int i=0;i<7;i++){
+                thisWeekUseTime[i] = thisWeekUseTime[i]+DateUtil.getDuration(startMoment,endMoment,thisWeek[i],DateUtil.getNeedTime(thisWeek[i], 23, 59, 59, 0));
+            }
+        }
+
+        for(UseState useState: useStateLastWeek){
+            Date startMoment = useState.getStartTime();
+            Date endMoment = useState.getEndTime();
+            for(int i=0;i<7;i++){
+                lastWeekUseTime[i] = lastWeekUseTime[i]+DateUtil.getDuration(startMoment,endMoment,lastWeek[i],DateUtil.getNeedTime(lastWeek[i], 23, 59, 59, 0));
+            }
+        }
+
+        for (int i=0;i<7;i++){
+            thisWeekTotalUseTime += thisWeekUseTime[i];
+            lastWeekTotalUseTime += lastWeekUseTime[i];
+        }
+        int thisWeekAverage = thisWeekTotalUseTime/7;
+
+        SimpleDateFormat sp = new SimpleDateFormat("E");
+        String thisWeekStr[] = new String[7];
+        for (int i = 0; i < 7; i++) {
+            thisWeekStr[i] = sp.format(thisWeek[i]);
+        }
+        ObjectMapper mapper = new ObjectMapper();
+        String lastSevenDays = mapper.writeValueAsString(thisWeekStr);
+        String useTime = mapper.writeValueAsString(thisWeekUseTime);
+
+
+        List<App> appList = new ArrayList<App>();
+        for (UseState useState : useStateThisWeek) {
+            App app = appService.getAppById(useState.getAppId());
+            int flag = 0;
+            int i = 0;
+            for (App appTemp : appList) {
+                if (appTemp.getAppId() == app.getAppId()) {
+                    flag = 1;
+                    break;
+                }
+                i++;
+            }
+            if (flag == 0) {
+                List<UseState> useStateListTemp = app.getUseStateList();
+                useStateListTemp.add(useState);
+                app.setUseStateList(useStateListTemp);
+                appList.add(app);
+            } else {
+                List<UseState> useStateListTemp = appList.get(i).getUseStateList();
+                useStateListTemp.add(useState);
+                app.setUseStateList(useStateListTemp);
+                appList.set(i, app);
+            }
+
+        }
+        for (App app : appList) {
+            int appUseTime = 0;
+            for (UseState useState : app.getUseStateList()) {
+                Date startMoment = useState.getStartTime();
+                Date endMoment = useState.getEndTime();
+                appUseTime = appUseTime+DateUtil.getDuration(startMoment,endMoment,startMoment,endMoment);
+            }
+            app.setUseTime(appUseTime);
+        }
+        Collections.sort(appList, new Comparator<App>() {
+            @Override
+            public int compare(App app1, App app2) {
+                int useTime1 = app1.getUseTime();
+                int useTime2 = app2.getUseTime();
+                if (useTime1 == useTime2) {
+                    return 0;
+                } else if (useTime1 > useTime2) {
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }
+        });
+        int count = 0;
+        if(appList.size()>=5){
+            count = 5;
+        }else{
+            count = appList.size();
+        }
+        List<App> appListTop5 = new ArrayList<App>();
+        for (int i = 0;i<count;i++){
+            appListTop5.add(appList.get(i));
+        }
+        List<Type> typeList = new ArrayList<Type>();
+        for (App app : appList) {
+            int i = 0;
+            int flag = 0;
+            for (Type type : typeList) {
+                if (type.getName().equals(app.getAppType())) {
+                    flag = 1;
+                    break;
+                }
+                i++;
+            }
+            Type type = new Type();
+            if (flag == 0) {
+                type.setName(app.getAppType());
+                type.setTypeUseTime(app.getUseTime());
+                typeList.add(type);
+            } else {
+                type = typeList.get(i);
+                int typeUseTime = type.getTypeUseTime() + app.getUseTime();
+                type.setTypeUseTime(typeUseTime);
+                typeList.set(i, type);
+            }
+        }
+        Collections.sort(typeList, new Comparator<Type>() {
+            @Override
+            public int compare(Type type1, Type type2) {
+                int useTime1 = type1.getTypeUseTime();
+                int useTime2 = type2.getTypeUseTime();
+                if (useTime1 == useTime2) {
+                    return 0;
+                } else if (useTime1 > useTime2) {
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }
+        });
+        if(typeList.size()>=5){
+            count = 5;
+        }else{
+            count = typeList.size();
+        }
+        List<Type> typeListTop5 = new ArrayList<Type>();
+        for (int i = 0;i<count;i++){
+            typeListTop5.add(typeList.get(i));
+        }
+
+
+        int thisWeekCount = useStateThisWeek.size();
+        int lastWeekCount = useStateLastWeek.size();
+        List<Unlock> thisWeekUnlock = unlockService.getUnlockByUserIdAndDate(userId,thisWeek[0],DateUtil.getNeedTime(thisWeek[6],23,59,59,0));
+        List<Unlock> lastWeekUnlock = unlockService.getUnlockByUserIdAndDate(userId,lastWeek[0],DateUtil.getNeedTime(lastWeek[6],23,59,59,0));
+        model.addAttribute("user", user);
+        model.addAttribute("lastWeek", lastSevenDays);
+        model.addAttribute("useTime", useTime);
+        model.addAttribute("thisWeekTotal", thisWeekTotalUseTime);
+        model.addAttribute("lastWeekTotal", lastWeekTotalUseTime);
+        model.addAttribute("thisWeekCount", thisWeekCount);
+        model.addAttribute("lastWeekCount", lastWeekCount);
+        model.addAttribute("thisWeekUnlock", thisWeekUnlock.size());
+        model.addAttribute("lastWeekUnlock", lastWeekUnlock.size());
+        model.addAttribute("thisWeekAverage",thisWeekAverage);
+        model.addAttribute("totalAverage",totalAverage);
+        model.addAttribute("appListTop5",appListTop5);
+        model.addAttribute("typeListTop5",typeListTop5);
+
+        return "parent/showReport";
     }
 }

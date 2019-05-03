@@ -10,6 +10,8 @@
 <head>
     <meta charset="UTF-8">
     <title>登录</title>
+    <link rel="shortcut icon" href="${path}/static/custom/image/favicon.ico" />
+    <link rel="bookmark"href="${path}/static/custom/image/favicon.ico" />
     <link rel="stylesheet" href="${path}/static/plugins/layui/css/layui.css">
     <link rel="stylesheet" href="${path}/static/custom/css/admin_login.css">
 </head>

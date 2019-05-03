@@ -5,6 +5,8 @@ import com.alan.model.*;
 import com.alan.service.*;
 import com.alan.util.CaptchaUtil;
 import com.alan.util.DateUtil;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -76,7 +78,7 @@ public class AdminController {
     }
 
     @RequestMapping("/index")
-    public String index(Model model) {
+    public String index(Model model) throws JsonProcessingException {
         List<User> userList = userService.getRecentUser(5);
         List<App> appList = appService.getRecentApp(5);
         int currentYear = Calendar.getInstance().get(Calendar.YEAR) - 1900;
@@ -92,17 +94,14 @@ public class AdminController {
             appNum[i] = appService.getAppNumByDate(lastWeek[i], DateUtil.getNeedTime(lastWeek[i], 23, 59, 59, 0));
         }
         SimpleDateFormat sp = new SimpleDateFormat("MM/dd");
-        String lastSevenDays = "[";
-        String newUser = "[";
-        String newApp = "[";
+        String lastWeekStr[] = new String[7];
         for (int i = 0; i < 7; i++) {
-            lastSevenDays += "'" + sp.format(lastWeek[i]) + "',";
-            newUser += userNum[i] + ",";
-            newApp += appNum[i] + ",";
+            lastWeekStr[i] = sp.format(lastWeek[i]);
         }
-        lastSevenDays += "]";
-        newUser += "]";
-        newApp += "]";
+        ObjectMapper mapper = new ObjectMapper();
+        String lastSevenDays = mapper.writeValueAsString(lastWeekStr);
+        String newUser = mapper.writeValueAsString(userNum);
+        String newApp = mapper.writeValueAsString(appNum);
         model.addAttribute("userList", userList);
         model.addAttribute("appList", appList);
         model.addAttribute("currentYear", currentYear);

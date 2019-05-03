@@ -13,6 +13,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>用户行为分析系统 | 家长</title>
+    <link rel="shortcut icon" href="${path}/static/custom/image/favicon.ico" />
+    <link rel="bookmark"href="${path}/static/custom/image/favicon.ico" />
     <!--引入CSS-->
     <link rel="stylesheet" href="${path}/static/plugins/layui/css/layui.css">
 </head>
@@ -40,6 +42,7 @@
                     </small>
                 </h3>
             </div>
+            <h4><a href="${path}/parent/showReport?userId=${user.userId}">点此查看周度报告>>></a></h4>
             <div class="layui-row" style="margin-top: 20px">
                 <div class="layui-col-md11">
                     <div class="layui-row">
@@ -54,55 +57,61 @@
                             </ul>
                             <div class="layui-tab-content">
                                 <div class="layui-tab-item layui-show">
-                                    <div class="layui-col-md6">
-                                        <h3>最常使用</h3>
-                                        <table class="layui-table" lay-even lay-skin="nob">
-                                            <tr>
-                                                <th>图标</th>
-                                                <th>应用名</th>
-                                                <th>类别</th>
-                                                <th>使用时长</th>
-                                            </tr>
-                                            <c:if test="${!empty appList}">
-                                                <c:forEach var="app" items="${appList}">
-                                                    <tr>
-                                                        <td><img src="${app.appIcon}" style="max-width: 30px"></td>
-                                                        <td>${app.appName}</td>
-                                                        <td>${app.appType}</td>
-                                                        <td>
-                                                                ${app.useTime}分钟
-                                                        </td>
-                                                    </tr>
-                                                </c:forEach>
-                                            </c:if>
-                                        </table>
-                                    </div>
-                                    <div class="layui-col-md6">
-                                        <div id="pieChart" style="min-width:400px;height:400px"></div>
+                                    <div class="layui-row layui-col-space10">
+                                        <div class="layui-col-md6">
+                                            <h3>最常使用</h3>
+                                            <table class="layui-table" lay-even lay-skin="nob">
+                                                <tr>
+                                                    <th>图标</th>
+                                                    <th>应用名</th>
+                                                    <th>类别</th>
+                                                    <th>开启次数</th>
+                                                    <th>使用时长</th>
+                                                </tr>
+                                                <c:if test="${!empty appList}">
+                                                    <c:forEach var="app" items="${appList}">
+                                                        <tr>
+                                                            <td><img src="${app.appIcon}" style="max-width: 30px"></td>
+                                                            <td>${app.appName}</td>
+                                                            <td>${app.appType}</td>
+                                                            <td>${app.useStateList.size()}</td>
+                                                            <td>
+                                                                    ${app.useTime}分钟
+                                                            </td>
+                                                        </tr>
+                                                    </c:forEach>
+                                                </c:if>
+                                            </table>
+                                        </div>
+                                        <div class="layui-col-md6">
+                                            <div id="pieChart"></div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="layui-tab-item">
-                                    <div class="layui-col-md6">
-                                        <h3>最常使用</h3>
-                                        <table class="layui-table" lay-even lay-skin="nob">
-                                            <tr>
-                                                <th>应用类别</th>
-                                                <th>使用时长</th>
-                                            </tr>
-                                            <c:if test="${!empty typeList}">
-                                                <c:forEach var="type" items="${typeList}">
-                                                    <tr>
-                                                        <td>${type.name}</td>
-                                                        <td>
-                                                                ${type.typeUseTime}分钟
-                                                        </td>
-                                                    </tr>
-                                                </c:forEach>
-                                            </c:if>
-                                        </table>
-                                    </div>
-                                    <div class="layui-col-md6">
-                                        <div id="pieChart2" style="min-width:400px;height:400px"></div>
+                                    <div class="layui-row layui-col-space10">
+                                        <div class="layui-col-md6">
+                                            <h3>最常使用</h3>
+                                            <table class="layui-table" lay-even lay-skin="nob">
+                                                <tr>
+                                                    <th>应用类别</th>
+                                                    <th>使用时长</th>
+                                                </tr>
+                                                <c:if test="${!empty typeList}">
+                                                    <c:forEach var="type" items="${typeList}">
+                                                        <tr>
+                                                            <td>${type.name}</td>
+                                                            <td>
+                                                                    ${type.typeUseTime}分钟
+                                                            </td>
+                                                        </tr>
+                                                    </c:forEach>
+                                                </c:if>
+                                            </table>
+                                        </div>
+                                        <div class="layui-col-md6">
+                                            <div id="pieChart2"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -111,7 +120,10 @@
                     <hr/>
                     <div class="layui-row">
                         <fieldset class="layui-elem-field">
-                            <legend>位置信息 - 位置点${locationList.size()-1}处</legend>
+                            <legend>
+                                <i class="layui-icon layui-icon-location"></i>
+                                位置信息 - 位置点${locationList.size()-1}处
+                            </legend>
                             <div class="layui-field-box">
                                 <div id="container"></div>
                             </div>
@@ -132,7 +144,7 @@
                                         <div class="layui-timeline-content layui-text">
                                             <h3 class="layui-timeline-title">
                                                 <fmt:formatDate value="${unlock.unlockTime}" type="date"
-                                                pattern="HH:ss:mm"/>
+                                                pattern="HH:mm"/>
                                             </h3>
                                         </div>
                                     </li>
@@ -267,7 +279,7 @@
         };
 
         var tooltip = {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            pointFormat: ' <b>{point.percentage:.1f}%</b>'
         };
 
         var plotOptions = {
@@ -308,7 +320,7 @@
         };
 
         var tooltip = {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            pointFormat: ' <b>{point.percentage:.1f}%</b>'
         };
 
         var plotOptions = {

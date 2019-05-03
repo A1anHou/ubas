@@ -36,5 +36,10 @@ public class DateUtil {
         return (int)(et-st)/(1000*60);
     }
 
+    public static int getDuringDay(Date startTime,Date endTime){
+        long st = getNeedTime(startTime,0,0,0,0).getTime();
+        long et = getNeedTime(endTime,23,59,59,0).getTime();
+        return (int)(et-st)/(1000*60*60*24);
+    }
 
 }

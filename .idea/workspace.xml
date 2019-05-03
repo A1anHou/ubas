@@ -10,46 +10,37 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/controller/ParentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/controller/ParentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/dao/AppDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/dao/AppDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/service/AppService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/service/AppService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/service/ParentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/service/ParentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/service/impl/AdminServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/service/impl/AppServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/service/impl/AppServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/service/impl/ParentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/service/impl/ParentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/AppMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/AppMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/common/parent_header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/common/parent_header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/model/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/model/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/util/DateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/util/DateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/admin/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/admin/app.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/admin/app.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/admin/editMyInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/admin/editMyInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/admin/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/admin/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/admin/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/admin/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/admin/myInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/admin/myInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/admin/parent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/admin/parent.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/admin/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/admin/user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/parent/editMyInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/parent/editMyInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/parent/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/parent/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/parent/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/parent/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/parent/myInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/parent/myInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/parent/showData.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/parent/showData.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/parent/showLocation.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/alan/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/controller/ParentController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/controller/ParentController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/alan/controller/ParentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/controller/ParentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/dao/AppDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/dao/AppDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/service/AdminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/AppService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/service/AppService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/ParentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/service/ParentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/impl/AdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/service/impl/AdminServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/impl/AppServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/service/impl/AppServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/impl/ParentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/service/impl/ParentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/AppMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/AppMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/model/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/model/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alan/util/DateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/alan/util/DateUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/controller/ParentController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/controller/ParentController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/controller/ParentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/controller/ParentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/dao/AppDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/dao/AppDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/AdminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/AppService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/AppService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/ParentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/ParentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/impl/AdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/impl/AdminServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/impl/AppServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/impl/AppServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/impl/ParentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/impl/ParentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/mapping/AppMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/mapping/AppMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/model/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/model/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/util/DateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/WEB-INF/classes/com/alan/util/DateUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ubas/jsp/parent/editMyInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/jsp/parent/editMyInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ubas/jsp/parent/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/jsp/parent/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ubas/jsp/parent/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/jsp/parent/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ubas/jsp/parent/myInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/jsp/parent/myInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ubas/jsp/parent/showData.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ubas/jsp/parent/showData.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ubas/jsp/parent/showLocation.jsp" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,54 +53,19 @@
     <favorites_list name="ubas" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="156" column="23" lean-forward="true" selection-start-line="156" selection-start-column="23" selection-end-line="156" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/common/parent_header.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="14" column="64" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/common/admin_header.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="26" column="64" lean-forward="true" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>addA</find>
-      <find>editA</find>
-      <find>alert</find>
-      <find>index</find>
-      <find>int curre</find>
-      <find>int currentYear = Calendar.getInstance().get(Calendar.YEAR)-1900;</find>
-      <find>credits</find>
       <find>window.location.href</find>
       <find>myInfo</find>
       <find>管理员</find>
@@ -133,6 +89,13 @@
       <find>System.err.println</find>
       <find>parent</find>
       <find>admin</find>
+      <find>j</find>
+      <find>app</find>
+      <find>lastWeekTotalUseTime</find>
+      <find>lastWeekTotal</find>
+      <find>sYSTEM</find>
+      <find>ubas_logo.favicon</find>
+      <find>ubas_logo.favicon.ico</find>
     </findStrings>
     <replaceStrings>
       <replace>parent</replace>
@@ -142,6 +105,10 @@
       <replace>user</replace>
       <replace>admin</replace>
       <replace>app</replace>
+      <replace>i</replace>
+      <replace>thisWeekCount</replace>
+      <replace>lastWeekCount</replace>
+      <replace>favicon.ico</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -150,23 +117,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/parent/showLocation.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alan/model/Location.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/parent/showData.jsp" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alan/util/CrawlerUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alan/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alan/service/impl/UseStateServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/UseStateMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alan/service/UseStateService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alan/dao/UseStateDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alan/service/LocationService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alan/service/impl/LocationServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alan/dao/LocationDao.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/LocationMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alan/service/UnlockService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alan/service/impl/UnlockServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alan/dao/UnlockDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/UnlockMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/alan/service/RelationService.java" />
@@ -190,17 +140,34 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapping/EditAdminMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/alan/service/AdminService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alan/service/impl/AdminServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alan/controller/AdminController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alan/dao/ManageAppDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alan/dao/EditAppDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/EditAppDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alan/controller/ParentController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alan/service/AppService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alan/service/impl/AppServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alan/dao/AppDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/AppMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/common/parent_header.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/alan/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alan/model/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alan/controller/AdminController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alan/util/DateUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alan/controller/ParentController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/admin/admin.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/admin/editMyInfo.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/admin/app.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/admin/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/admin/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/admin/myInfo.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/admin/parent.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/admin/user.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/parent/editMyInfo.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/parent/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/parent/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/parent/myInfo.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/parent/showData.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/parent/showReport.jsp" />
       </list>
     </option>
   </component>
@@ -276,87 +243,7 @@
               <item name="ubas" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="alan" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ubas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ubas" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="alan" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ubas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ubas" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="alan" type="462c0819:PsiDirectoryNode" />
-              <item name="interceptor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ubas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ubas" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="alan" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ubas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ubas" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="alan" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ubas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ubas" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="alan" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ubas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ubas" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="alan" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ubas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ubas" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ubas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ubas" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapping" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ubas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ubas" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ubas" type="b2602c69:ProjectViewProjectNode" />
@@ -380,7 +267,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="jsp" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="parent" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ubas" type="b2602c69:ProjectViewProjectNode" />
@@ -413,14 +300,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556788394633" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556904902593" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -429,19 +316,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IdeaWorkSpace\ubas\src\main\webapp\static\custom\image" />
-      <recent name="D:\IdeaWorkSpace\ubas\src\main\java\com\alan\interceptor" />
-      <recent name="D:\IdeaWorkSpace\ubas\src\main\webapp\jsp\parent" />
-      <recent name="D:\IdeaWorkSpace\ubas\src\main\webapp\jsp" />
-      <recent name="D:\IdeaWorkSpace\ubas\src\main\webapp\jsp\admin" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\IdeaWorkSpace\ubas\src\main\webapp\jsp\parent" />
       <recent name="D:\IdeaWorkSpace\ubas\src\main\webapp\jsp" />
       <recent name="D:\IdeaWorkSpace\ubas\src\main\webapp\jsp\admin" />
       <recent name="D:\IdeaWorkSpace\ubas\src\main\resources\spring" />
       <recent name="D:\IdeaWorkSpace\ubas\src\main\webapp\jsp\common" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaWorkSpace\ubas\src\main\webapp\static\custom\image" />
+      <recent name="D:\IdeaWorkSpace\ubas\src\main\java\com\alan\interceptor" />
+      <recent name="D:\IdeaWorkSpace\ubas\src\main\webapp\jsp\parent" />
+      <recent name="D:\IdeaWorkSpace\ubas\src\main\webapp\jsp" />
+      <recent name="D:\IdeaWorkSpace\ubas\src\main\webapp\jsp\admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -575,11 +462,13 @@
       <workItem from="1556612707406" duration="1754000" />
       <workItem from="1556614553353" duration="2887000" />
       <workItem from="1556779624636" duration="8165000" />
+      <workItem from="1556793899632" duration="1236000" />
+      <workItem from="1556849373995" duration="33430000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="315015000" />
+    <option name="totallyTimeSpent" value="349681000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -592,9 +481,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49658313" visible="true" weight="0.2586904" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49658313" visible="true" weight="0.26677445" />
       <window_info id="Structure" order="1" sideWeight="0.5008881" side_tool="true" weight="0.23282135" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -640,202 +528,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/util/CrawlerUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-253">
-          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/ParentMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="23" column="37" selection-start-line="21" selection-start-column="8" selection-end-line="23" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/UseStateMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="17" column="41" lean-forward="true" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-          <folding>
-            <element signature="e#706#710#0" expanded="true" />
-            <element signature="e#746#750#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/dao/UseStateDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/service/impl/UseStateServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#797#798#0" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/service/UseStateService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/LocationMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-          <folding>
-            <element signature="e#961#965#0" expanded="true" />
-            <element signature="e#1001#1005#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/service/impl/LocationServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1006#1007#0" expanded="true" />
-            <element signature="e#1033#1034#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/service/LocationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/UnlockMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/dao/UnlockDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/service/impl/UnlockServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#772#773#0" expanded="true" />
-            <element signature="e#829#830#0" expanded="true" />
-            <element signature="e#902#903#0" expanded="true" />
-            <element signature="e#929#930#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/service/UnlockService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/RelationMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/dao/RelationDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/service/impl/RelationServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="51" column="47" lean-forward="true" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
-          <folding>
-            <element signature="e#1478#1479#0" expanded="true" />
-            <element signature="e#1505#1506#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/service/RelationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/interceptor/AdminSessionInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/interceptor/ParentSessionInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="35" column="91" lean-forward="true" selection-start-line="35" selection-start-column="91" selection-end-line="35" selection-end-column="91" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/service/ParentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/interceptor/MethodRuntimeCountInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -981,31 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/controller/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="226" column="21" selection-start-line="226" selection-start-column="21" selection-end-line="226" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/controller/ParentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="144" column="46" lean-forward="true" selection-start-line="144" selection-start-column="46" selection-end-line="144" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#login#0;class#ParentController#0" />
-            <element signature="method#register#0;class#ParentController#0" />
-            <element signature="method#logout#0;class#ParentController#0" />
-            <element signature="method#index#0;class#ParentController#0" />
-            <element signature="method#myInfo#0;class#ParentController#0" />
-            <element signature="method#bindChild#0;class#ParentController#0" />
-            <element signature="method#bindChild#1;class#ParentController#0" />
-            <element signature="method#showData#0;class#ParentController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/AppMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
@@ -1037,27 +704,208 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/custom/image/admin.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/common/admin_header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="26" column="64" lean-forward="true" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/custom/image/parent.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/common/parent_header.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
+        <state relative-caret-position="350">
           <caret line="14" column="64" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/model/UseState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/model/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="67" column="13" lean-forward="true" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/model/Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="156" column="23" lean-forward="true" selection-start-line="156" selection-start-column="23" selection-end-line="156" selection-end-column="23" />
+        <state relative-caret-position="308">
+          <caret line="163" column="55" lean-forward="true" selection-start-line="163" selection-start-column="55" selection-end-line="163" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/controller/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="758">
+          <caret line="107" column="54" lean-forward="true" selection-start-line="107" selection-start-column="54" selection-end-line="107" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/util/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/controller/ParentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="568" column="41" selection-start-line="568" selection-start-column="41" selection-end-line="568" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#login#0;class#ParentController#0" />
+            <element signature="method#register#0;class#ParentController#0" />
+            <element signature="method#logout#0;class#ParentController#0" />
+            <element signature="method#index#0;class#ParentController#0" />
+            <element signature="method#myInfo#0;class#ParentController#0" />
+            <element signature="method#bindChild#0;class#ParentController#0" />
+            <element signature="method#bindChild#1;class#ParentController#0" />
+            <element signature="e#23478#23484#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/common/admin_header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="26" column="63" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/parent/showLocation.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-75" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1263">
+          <caret line="140" lean-forward="true" selection-start-line="140" selection-end-line="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/custom/image/favicon.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-mybatis.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1654" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2025">
+          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/admin/admin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/admin/app.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="18" column="77" lean-forward="true" selection-start-line="18" selection-start-column="77" selection-end-line="18" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/admin/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="21" column="45" lean-forward="true" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/admin/editMyInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/admin/parent.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/admin/myInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="15" column="75" selection-start-line="15" selection-start-column="75" selection-end-line="15" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/admin/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="12" column="75" selection-start-line="12" selection-start-column="75" selection-end-line="12" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/admin/user.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/parent/showReport.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="16" column="73" lean-forward="true" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
+          <folding>
+            <element signature="n#c:if#1;n#jsp:root#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/parent/myInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/parent/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/parent/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/parent/editMyInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="15" column="75" selection-start-line="15" selection-start-column="75" selection-end-line="15" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/parent/showData.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
         </state>
       </provider>
     </entry>
