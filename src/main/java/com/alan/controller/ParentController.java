@@ -395,7 +395,6 @@ public class ParentController {
         }
         User user = userService.getUserById(userId);
         user.setUserPwd("");
-        int currentYear = Calendar.getInstance().get(Calendar.YEAR) - 1900;
         Date thisWeek[] = new Date[7];
         Date lastWeek[] = new Date[7];
         List<UseState> useStateThisWeek = new ArrayList<UseState>();
@@ -417,18 +416,28 @@ public class ParentController {
             Date endMoment = useState.getEndTime();
             totalUseTime = totalUseTime + DateUtil.getDuration(startMoment,endMoment,startMoment,endMoment);
         }
-        int totalDuringDay = DateUtil.getDuringDay(useStatesAll.get(0).getStartTime(),useStatesAll.get(useStatesAll.size()-1).getEndTime())+1;
-        int totalAverage = totalUseTime/totalDuringDay;
+        int totalAverage = 0;
+        if(!useStatesAll.isEmpty()){
+            int totalDuringDay = DateUtil.getDuringDay(useStatesAll.get(0).getStartTime(),useStatesAll.get(useStatesAll.size()-1).getEndTime())+1;
+            totalAverage = totalUseTime/totalDuringDay;
+        }
+
 
         int thisWeekUseTime[] = new int[7];
         int lastWeekUseTime[] = new int[7];
         int thisWeekTotalUseTime = 0;
         int lastWeekTotalUseTime = 0;
+        int thisWeekNightTime[] = new int[7];
+        int lastWeekNightTime[] = new int[7];
+        int thisWeekTotalNightTime = 0;
+        int lastWeekTotalNightTime = 0;
         for(UseState useState: useStateThisWeek){
             Date startMoment = useState.getStartTime();
             Date endMoment = useState.getEndTime();
             for(int i=0;i<7;i++){
                 thisWeekUseTime[i] = thisWeekUseTime[i]+DateUtil.getDuration(startMoment,endMoment,thisWeek[i],DateUtil.getNeedTime(thisWeek[i], 23, 59, 59, 0));
+                thisWeekNightTime[i] = thisWeekNightTime[i]+DateUtil.getDuration(startMoment,endMoment,thisWeek[i],DateUtil.getNeedTime(thisWeek[i], 5, 59, 59, 0));
+                thisWeekNightTime[i] = thisWeekNightTime[i]+DateUtil.getDuration(startMoment,endMoment,DateUtil.getNeedTime(thisWeek[i], 23, 0, 0, 0),DateUtil.getNeedTime(thisWeek[i], 23, 59, 59, 0));
             }
         }
 
@@ -437,12 +446,17 @@ public class ParentController {
             Date endMoment = useState.getEndTime();
             for(int i=0;i<7;i++){
                 lastWeekUseTime[i] = lastWeekUseTime[i]+DateUtil.getDuration(startMoment,endMoment,lastWeek[i],DateUtil.getNeedTime(lastWeek[i], 23, 59, 59, 0));
+                lastWeekNightTime[i] = lastWeekNightTime[i]+DateUtil.getDuration(startMoment,endMoment,lastWeek[i],DateUtil.getNeedTime(lastWeek[i], 6, 0, 0, 0));
+                lastWeekNightTime[i] = lastWeekNightTime[i]+DateUtil.getDuration(startMoment,endMoment,DateUtil.getNeedTime(lastWeek[i], 23, 0, 0, 0),DateUtil.getNeedTime(lastWeek[i], 23, 59, 59, 0));
             }
         }
+
 
         for (int i=0;i<7;i++){
             thisWeekTotalUseTime += thisWeekUseTime[i];
             lastWeekTotalUseTime += lastWeekUseTime[i];
+            thisWeekTotalNightTime += thisWeekNightTime[i];
+            lastWeekTotalNightTime += lastWeekNightTime[i];
         }
         int thisWeekAverage = thisWeekTotalUseTime/7;
 
@@ -579,6 +593,10 @@ public class ParentController {
         model.addAttribute("totalAverage",totalAverage);
         model.addAttribute("appListTop5",appListTop5);
         model.addAttribute("typeListTop5",typeListTop5);
+        model.addAttribute("appList",appList);
+        model.addAttribute("typeList",typeList);
+        model.addAttribute("thisWeekTotalNightTime",thisWeekTotalNightTime);
+        model.addAttribute("lastWeekTotalNightTime",lastWeekTotalNightTime);
 
         return "parent/showReport";
     }

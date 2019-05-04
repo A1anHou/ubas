@@ -83,7 +83,7 @@
             </bean>
         </mvc:interceptor>
         <mvc:interceptor>
-            <mvc:mapping path="/adminl/**/*"/>
+            <mvc:mapping path="/admin/**/*"/>
             <!--排除登录页面-->
             <mvc:exclude-mapping path="login"/>
             <bean class="com.alan.interceptor.AdminSessionInterceptor">
@@ -91,7 +91,7 @@
             </bean>
         </mvc:interceptor>
         <mvc:interceptor>
-            <mvc:mapping path="/parentl/**/*"/>
+            <mvc:mapping path="/parent/**/*"/>
             <!--排除登录页面-->
             <mvc:exclude-mapping path="login"/>
             <bean class="com.alan.interceptor.ParentSessionInterceptor">

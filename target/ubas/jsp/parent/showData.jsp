@@ -46,7 +46,13 @@
             <div class="layui-row" style="margin-top: 20px">
                 <div class="layui-col-md11">
                     <div class="layui-row">
-                        <div id="barChart" style="min-width:400px;height:400px"></div>
+                        <c:if test="${!empty barDateList}">
+                            <div id="barChart" style="min-width:400px;height:400px"></div>
+                        </c:if>
+                        <c:if test="${empty barDateList}">
+                            <h1>暂无数据</h1>
+                        </c:if>
+
                     </div>
                     <hr/>
                     <div class="layui-row">
@@ -81,10 +87,20 @@
                                                         </tr>
                                                     </c:forEach>
                                                 </c:if>
+                                                <c:if test="${empty appList}">
+                                                    <tr>
+                                                        <td colspan="5"><h1>暂无数据</h1></td>
+                                                    </tr>
+                                                </c:if>
                                             </table>
                                         </div>
                                         <div class="layui-col-md6">
-                                            <div id="pieChart"></div>
+                                            <c:if test="${!empty appList}">
+                                                <div id="pieChart"></div>
+                                            </c:if>
+                                            <c:if test="${empty appList}">
+                                                <h1>暂无数据</h1>
+                                            </c:if>
                                         </div>
                                     </div>
                                 </div>
@@ -107,10 +123,20 @@
                                                         </tr>
                                                     </c:forEach>
                                                 </c:if>
+                                                <c:if test="${empty typeList}">
+                                                    <tr>
+                                                        <td colspan="2"><h1>暂无数据</h1></td>
+                                                    </tr>
+                                                </c:if>
                                             </table>
                                         </div>
                                         <div class="layui-col-md6">
-                                            <div id="pieChart2"></div>
+                                            <c:if test="${!empty appList}">
+                                                <div id="pieChart2"></div>
+                                            </c:if>
+                                            <c:if test="${empty appList}">
+                                                <h1>暂无数据</h1>
+                                            </c:if>
                                         </div>
                                     </div>
                                 </div>

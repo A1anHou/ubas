@@ -46,7 +46,7 @@
                                     <i class="layui-icon">&#xe640;</i> 解除绑定
                                 </button>
                                 <button class="layui-btn layui-btn-sm " style="float: right; margin-top: 5px" onclick="showData(${user.userId})">
-                                    <i class="layui-icon">&#xe629;</i> 查看数据
+                                    <i class="layui-icon layui-icon-chart"></i> 查看数据
                                 </button>
 
                             </h2>

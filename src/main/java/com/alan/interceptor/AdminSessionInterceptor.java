@@ -19,7 +19,7 @@ public class AdminSessionInterceptor implements HandlerInterceptor {
             return true;
         }
         if(user == null){
-            response.sendRedirect(request.getContextPath() + "/jsp/login.jsp");
+            response.sendRedirect(request.getContextPath() + "/jsp/parent/login.jsp");
             return false;
         }
         if(user instanceof Admin){
@@ -28,7 +28,7 @@ public class AdminSessionInterceptor implements HandlerInterceptor {
             request.getSession().setAttribute("SESSION_USER",admin);
             return true;
         }else{
-            response.sendRedirect(request.getContextPath() + "/jsp/login.jsp");
+            response.sendRedirect(request.getContextPath() + "/jsp/parent/login.jsp");
             return false;
         }
     }

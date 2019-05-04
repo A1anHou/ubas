@@ -32,11 +32,17 @@
             </button>
             <h2>${user.userName}的周度报告</h2>
             <div class="layui-row">
-                <div id="timeChart" ></div>
+                <c:if test="${!empty useTime}">
+                    <div id="timeChart" ></div>
+                </c:if>
+                <c:if test="${empty useTime}">
+                    <h1>暂无数据</h1>
+                </c:if>
             </div>
+            <br/>
             <div class="layui-row layui-col-space10">
-                <div class="layui-col-md5">
-                    <h2>本周应用时长TOP5</h2>
+                <div class="layui-col-md6 layui-anim layui-anim-scale">
+                    <h2><i class="layui-icon layui-icon-app"></i> 本周应用时长<span class="layui-badge">Top5</span></h2>
                     <table class="layui-table" lay-even lay-skin="nob">
                             <tr>
                                 <th>图标</th>
@@ -58,10 +64,13 @@
                                     </tr>
                                 </c:forEach>
                             </c:if>
+                            <c:if test="${empty appListTop5}">
+                                <tr><td colspan="5"><h1>暂无数据</h1></td></tr>
+                            </c:if>
                     </table>
                 </div>
-                <div class="layui-col-md3">
-                    <h2>本周类别时长TOP5</h2>
+                <div class="layui-col-md6 layui-anim layui-anim-scale">
+                    <h2><i class="layui-icon layui-icon-form"></i> 本周类别时长<span class="layui-badge">Top5</span></h2>
                     <table class="layui-table" lay-even lay-skin="nob">
                         <tr>
                             <th>应用类别</th>
@@ -77,66 +86,171 @@
                                 </tr>
                             </c:forEach>
                         </c:if>
+                        <c:if test="${empty typeListTop5}">
+                            <tr><td colspan="2"><h1>暂无数据</h1></td></tr>
+                        </c:if>
                     </table>
                 </div>
-                <div class="layui-col-md4" >
-                    <h2>趋势</h2>
-                    <table class="layui-table" lay-even lay-skin="nob">
-                        <tr><th>使用情况</th><th>变化趋势</th></tr>
-                        <tr>
-                            <td>使用时长：${thisWeekTotal}分钟</td>
-                            <td>相对上周&nbsp
-                                <c:if test="${thisWeekTotal>lastWeekTotal}">
-                                    <i class="layui-icon layui-icon-up" style="color: #FF5722;"></i>
-                                    增加了<fmt:formatNumber type="number" value="${(thisWeekTotal-lastWeekTotal)/(lastWeekTotal)*100}" pattern="0.00" maxFractionDigits="2"/>%
-                                </c:if>
-                                <c:if test="${thisWeekTotal<lastWeekTotal}">
-                                    <i class="layui-icon layui-icon-down" style="color: #5FB878;"></i>
-                                    减少了<fmt:formatNumber type="number" value="${(lastWeekTotal-thisWeekTotal)/(lastWeekTotal)*100}" pattern="0.00" maxFractionDigits="2"/>%
-                                </c:if>
-                                <c:if test="${thisWeekTotal==lastWeekTotal}">
-                                    ---&nbsp
-                                    保持不变
-                                </c:if>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>使用次数：${thisWeekCount}次</td>
-                            <td>相对上周&nbsp
-                                <c:if test="${thisWeekCount>lastWeekCount}">
-                                    <i class="layui-icon layui-icon-up" style="color: #FF5722;"></i>
-                                    增加了<fmt:formatNumber type="number" value="${(thisWeekCount-lastWeekCount)/(lastWeekCount)*100}" pattern="0.00" maxFractionDigits="2"/>%
-                                </c:if>
-                                <c:if test="${thisWeekCount<lastWeekCount}">
-                                    <i class="layui-icon layui-icon-down" style="color: #5FB878;"></i>
-                                    减少了<fmt:formatNumber type="number" value="${(lastWeekCount-thisWeekCount)/(lastWeekCount)*100}" pattern="0.00" maxFractionDigits="2"/>%
-                                </c:if>
-                                <c:if test="${thisWeekCount==lastWeekCount}">
-                                    ---&nbsp
-                                    保持不变
-                                </c:if>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>解锁次数：${thisWeekUnlock}次</td>
-                            <td>相对上周&nbsp
-                                <c:if test="${thisWeekUnlock>lastWeekUnlock}">
-                                    <i class="layui-icon layui-icon-up" style="color: #FF5722;"></i>
-                                    增加了<fmt:formatNumber type="number" value="${(thisWeekUnlock-lastWeekUnlock)/(lastWeekUnlock)*100}" pattern="0.00" maxFractionDigits="2"/>%
-                                </c:if>
-                                <c:if test="${thisWeekUnlock<lastWeekUnlock}">
-                                    <i class="layui-icon layui-icon-down" style="color: #5FB878;"></i>
-                                    减少了<fmt:formatNumber type="number" value="${(lastWeekUnlock-thisWeekUnlock)/(lastWeekUnlock)*100}" pattern="0.00" maxFractionDigits="2"/>%
-                                </c:if>
-                                <c:if test="${thisWeekUnlock==lastWeekUnlock}">
-                                    ---&nbsp
-                                    保持不变
-                                </c:if>
-                            </td>
-                        </tr>
+            </div>
+            <br/>
+            <div class="layui-row">
+                <fieldset class="layui-elem-field layui-anim layui-anim-up">
+                    <legend>
+                        <i class="layui-icon layui-icon-about"></i>
+                        本周总结
+                    </legend>
+                    <div class="layui-field-box" style="max-height: 300px">
+                        <c:if test="${empty appList}">
+                            <h1>暂无数据</h1>
+                        </c:if>
+                        <c:if test="${!empty appList}">
+                            <div id="container">
+                                <h2>您的孩子 ${user.userName} 在过去的一周中</h2>
+                                <hr/>
+                                <div class="layui-col-md6" style="margin-top: 10px">
+                                    <div>
+                                        <h3><span class="layui-badge-dot"></span>
+                                            使用了<span style="color: #FF5722">${appList.size()}</span>款应用，
+                                            共计<span style="color: #FF5722">${thisWeekCount}</span>次，
+                                            总时长为<span style="color: #FF5722">${thisWeekTotal}</span>分钟
+                                        </h3>
+                                        <h3>
+                                            使用时长相对于上周&nbsp
+                                            <c:if test="${thisWeekTotal>lastWeekTotal}">
+                                                <i class="layui-icon layui-icon-up" style="color: #FF5722;"></i>
+                                                增加了<fmt:formatNumber type="number" value="${(thisWeekTotal-lastWeekTotal)/(lastWeekTotal)*100}" pattern="0.00" maxFractionDigits="2"/>%
+                                                <br/>
+                                                <i class="layui-icon layui-icon-face-cry" style="color: #FF5722;"></i>请提醒
+                                                <c:if test="${user.userGender==0}">她</c:if>
+                                                <c:if test="${user.userGender==1}">他</c:if>
+                                                注意控制手机使用时间哦！
+                                            </c:if>
+                                            <c:if test="${thisWeekTotal<lastWeekTotal}">
+                                                <i class="layui-icon layui-icon-down" style="color: #5FB878;"></i>
+                                                减少了<fmt:formatNumber type="number" value="${(lastWeekTotal-thisWeekTotal)/(lastWeekTotal)*100}" pattern="0.00" maxFractionDigits="2"/>%
+                                                <br/>
+                                                <i class="layui-icon layui-icon-face-smile" style="color: #5FB878;"></i>
+                                                很棒！请再接再厉！
+                                            </c:if>
+                                            <c:if test="${thisWeekTotal==lastWeekTotal}">
+                                                ---&nbsp
+                                                保持不变
+                                            </c:if>
+                                        </h3>
+                                    </div>
+                                    <br/>
+                                    <div>
+                                        <h3>
+                                            <span class="layui-badge-dot layui-bg-orange"></span>
+                                            最喜欢使用<span style="color: #FF5722">${typeListTop5.get(0).name}</span>类应用，有
+                                            <fmt:formatNumber type="number" value="${typeListTop5.get(0).typeUseTime/(thisWeekTotal)*100}" pattern="0.00" maxFractionDigits="2"/>%
+                                            的时间在使用此类应用
+                                        </h3>
+                                        <h3>
+                                            最喜欢使用的应用是<span style="color: #FF5722">${appListTop5.get(0).appName}</span>，有
+                                            <fmt:formatNumber type="number" value="${appListTop5.get(0).useTime/(thisWeekTotal)*100}" pattern="0.00" maxFractionDigits="2"/>%
+                                            的时间在使用此应用
+                                        </h3>
+                                    </div>
+                                    <br/>
+                                    <div>
+                                        <h3>
+                                            <span class="layui-badge-dot layui-bg-green"></span>
+                                            <c:if test="${thisWeekTotalNightTime==0}">
+                                                从不熬夜使用手机，请继续保持！<i class="layui-icon layui-icon-praise"></i>
+                                            </c:if>
+                                            <c:if test="${thisWeekTotalNightTime!=0}">
+                                                熬夜使用手机共<span style="color: #FF5722">${thisWeekTotalNightTime}</span>分钟，占全部使用时间的
+                                                <fmt:formatNumber type="number" value="${thisWeekTotalNightTime/(thisWeekTotal)*100}" pattern="0.00" maxFractionDigits="2"/>%
+                                                <br/>
+                                                熬夜使用手机时间相较于上周
+                                                &nbsp
+                                                <c:if test="${thisWeekTotalNightTime>lastWeekTotal}">
+                                                    <i class="layui-icon layui-icon-up" style="color: #FF5722;"></i>
+                                                    增加了<fmt:formatNumber type="number" value="${(thisWeekTotalNightTime-lastWeekTotal)/(lastWeekTotal)*100}" pattern="0.00" maxFractionDigits="2"/>%
+                                                    <br/>
+                                                </c:if>
+                                                <c:if test="${thisWeekTotalNightTime<lastWeekTotal}">
+                                                    <i class="layui-icon layui-icon-down" style="color: #5FB878;"></i>
+                                                    减少了<fmt:formatNumber type="number" value="${(lastWeekTotal-thisWeekTotalNightTime)/(lastWeekTotal)*100}" pattern="0.00" maxFractionDigits="2"/>%
+                                                    <br/>
+                                                </c:if>
+                                                <c:if test="${thisWeekTotalNightTime==lastWeekTotalNightTime}">
+                                                    ---&nbsp
+                                                    保持不变
+                                                    <br/>
+                                                </c:if>
+                                                熬夜伤身，请提醒
+                                                <c:if test="${user.userGender==0}">她</c:if>
+                                                <c:if test="${user.userGender==1}">他</c:if>
+                                                注意休息，养成健康的作息习惯！
+                                            </c:if>
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="layui-col-md6" style="margin-top: 10px">
+                                    <h2><i class="layui-icon layui-icon-chart-screen" style="color: #c2c2c2;"></i>趋势</h2>
+                                    <table class="layui-table" lay-even lay-skin="nob">
+                                        <tr><th>使用情况</th><th>变化趋势</th></tr>
+                                        <tr>
+                                            <td>使用时长：${thisWeekTotal}分钟</td>
+                                            <td>相对上周&nbsp
+                                                <c:if test="${thisWeekTotal>lastWeekTotalNightTime}">
+                                                    <i class="layui-icon layui-icon-up" style="color: #FF5722;"></i>
+                                                    增加了<fmt:formatNumber type="number" value="${(thisWeekTotal-lastWeekTotal)/(lastWeekTotal)*100}" pattern="0.00" maxFractionDigits="2"/>%
+                                                </c:if>
+                                                <c:if test="${thisWeekTotal<lastWeekTotalNightTime}">
+                                                    <i class="layui-icon layui-icon-down" style="color: #5FB878;"></i>
+                                                    减少了<fmt:formatNumber type="number" value="${(lastWeekTotalNightTime-thisWeekTotal)/(lastWeekTotalNightTime)*100}" pattern="0.00" maxFractionDigits="2"/>%
+                                                </c:if>
+                                                <c:if test="${thisWeekTotal==lastWeekTotalNightTime}">
+                                                    ---&nbsp
+                                                    保持不变
+                                                </c:if>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>使用次数：${thisWeekCount}次</td>
+                                            <td>相对上周&nbsp
+                                                <c:if test="${thisWeekCount>lastWeekCount}">
+                                                    <i class="layui-icon layui-icon-up" style="color: #FF5722;"></i>
+                                                    增加了<fmt:formatNumber type="number" value="${(thisWeekCount-lastWeekCount)/(lastWeekCount)*100}" pattern="0.00" maxFractionDigits="2"/>%
+                                                </c:if>
+                                                <c:if test="${thisWeekCount<lastWeekCount}">
+                                                    <i class="layui-icon layui-icon-down" style="color: #5FB878;"></i>
+                                                    减少了<fmt:formatNumber type="number" value="${(lastWeekCount-thisWeekCount)/(lastWeekCount)*100}" pattern="0.00" maxFractionDigits="2"/>%
+                                                </c:if>
+                                                <c:if test="${thisWeekCount==lastWeekCount}">
+                                                    ---&nbsp
+                                                    保持不变
+                                                </c:if>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>解锁次数：${thisWeekUnlock}次</td>
+                                            <td>相对上周&nbsp
+                                                <c:if test="${thisWeekUnlock>lastWeekUnlock}">
+                                                    <i class="layui-icon layui-icon-up" style="color: #FF5722;"></i>
+                                                    增加了<fmt:formatNumber type="number" value="${(thisWeekUnlock-lastWeekUnlock)/(lastWeekUnlock)*100}" pattern="0.00" maxFractionDigits="2"/>%
+                                                </c:if>
+                                                <c:if test="${thisWeekUnlock<lastWeekUnlock}">
+                                                    <i class="layui-icon layui-icon-down" style="color: #5FB878;"></i>
+                                                    减少了<fmt:formatNumber type="number" value="${(lastWeekUnlock-thisWeekUnlock)/(lastWeekUnlock)*100}" pattern="0.00" maxFractionDigits="2"/>%
+                                                </c:if>
+                                                <c:if test="${thisWeekUnlock==lastWeekUnlock}">
+                                                    ---&nbsp
+                                                    保持不变
+                                                </c:if>
+                                            </td>
+                                        </tr>
 
-                    </table>
-                </div>
+                                    </table>
+                                </div>
+                            </div>
+                        </c:if>
+                    </div>
+                </fieldset>
+
             </div>
         </div>
     </div>

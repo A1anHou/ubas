@@ -18,7 +18,7 @@ public class ParentSessionInterceptor implements HandlerInterceptor {
             return true;
         }
         if(user == null){
-            response.sendRedirect(request.getContextPath() + "/page/login.jsp");
+            response.sendRedirect(request.getContextPath() + "/jsp/parent/login.jsp");
             return false;
         }
         if(user instanceof Parent){
@@ -27,7 +27,7 @@ public class ParentSessionInterceptor implements HandlerInterceptor {
             request.getSession().setAttribute("SESSION_USER",parent);
             return true;
         }else{
-            response.sendRedirect(request.getContextPath() + "/page/login.jsp");
+            response.sendRedirect(request.getContextPath() + "/jsp/parent/login.jsp");
             return false;
         }
     }
