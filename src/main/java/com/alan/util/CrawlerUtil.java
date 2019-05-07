@@ -34,6 +34,12 @@ public class CrawlerUtil implements PageProcessor {
     public static Map<String,String> getTypeAndIcon(String packageName){
         String url = "https://sj.qq.com/myapp/detail.htm?apkName="+packageName;
         Spider.create(new CrawlerUtil()).addUrl(url).thread(5).run();
+        if(type=="休闲益智"||type=="网络游戏"||type=="飞行射击"
+                ||type=="动作冒险"||type=="体育竞速"||type=="棋牌中心"
+                ||type=="经营策略"||type=="角色扮演"
+        ){
+            type = "游戏";
+        }
         Map<String,String> resultMap = new HashMap<String, String>();
         resultMap.put("type",type);
         resultMap.put("icon",icon);

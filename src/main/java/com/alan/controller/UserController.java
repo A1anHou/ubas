@@ -125,7 +125,7 @@ public class UserController {
         response.getWriter().print(userInfo);
     }
 
-    @RequestMapping("addUseStates")
+    @RequestMapping("/addUseStates")
     public void addUseStates(HttpServletRequest request,HttpServletResponse response) throws IOException {
         int userId = Integer.parseInt(request.getParameter("userId"));
         String useStatesJson = request.getParameter("useStatesJson");
@@ -142,6 +142,7 @@ public class UserController {
                 Map<String,String> typeAndIcon =  CrawlerUtil.getTypeAndIcon(appPackage);
                 String appType = typeAndIcon.get("type");
                 String appIcon = typeAndIcon.get("icon");
+
                 int submitUserId = userId;
                 if(appType.equals("")){
                     appType = "未分类";
@@ -157,7 +158,7 @@ public class UserController {
         response.getWriter().print("success");
     }
 
-    @RequestMapping("getUseStatesByDate")
+    @RequestMapping("/getUseStatesByDate")
     public void getUseStatesByDate(HttpServletRequest request,HttpServletResponse response) throws IOException {
         int userId = Integer.parseInt(request.getParameter("userId"));
         Date startTime = new Date(Long.parseLong(request.getParameter("startTime")));
@@ -176,7 +177,7 @@ public class UserController {
         response.getWriter().print(useStates);
     }
 
-    @RequestMapping("getAllUseStates")
+    @RequestMapping("/getAllUseStates")
     public void getAllUseStates(HttpServletRequest request,HttpServletResponse response) throws IOException {
         int userId = Integer.parseInt(request.getParameter("userId"));
         List<UseState> useStateList = useStateService.getUseStateByUserId(userId);
@@ -195,12 +196,12 @@ public class UserController {
 
 
 
-    @RequestMapping("addLocations")
+    @RequestMapping("/addLocations")
     public void addLocations(HttpServletRequest request,HttpServletResponse response) throws IOException {
         int userId = Integer.parseInt(request.getParameter("userId"));
-        String useStatesJson = request.getParameter("locationsJson");
+        String locationsJson = request.getParameter("locationsJson");
         ObjectMapper mapper = new ObjectMapper();
-        JsonNode rootNode = mapper.readTree(useStatesJson); // 读取Json
+        JsonNode rootNode = mapper.readTree(locationsJson); // 读取Json
         JsonNode locationsNode = rootNode.path("locations");
         for(int i=0;i<locationsNode.size();i++){
             double longitude = locationsNode.path("longitude").asDouble();
@@ -213,7 +214,7 @@ public class UserController {
     }
 
 
-    @RequestMapping("getLocationsByDate")
+    @RequestMapping("/getLocationsByDate")
     public void getLocationsByDate(HttpServletRequest request,HttpServletResponse response) throws IOException {
         int userId = Integer.parseInt(request.getParameter("userId"));
         Date startTime = new Date(Long.parseLong(request.getParameter("startTime")));
@@ -224,7 +225,7 @@ public class UserController {
         response.getWriter().print(locations);
     }
 
-    @RequestMapping("getAllLocations")
+    @RequestMapping("/getAllLocations")
     public void getAllLocations(HttpServletRequest request,HttpServletResponse response) throws IOException {
         int userId = Integer.parseInt(request.getParameter("userId"));
         List<Location> locationList = locationService.getLocationByUserId(userId);
@@ -233,7 +234,7 @@ public class UserController {
         response.getWriter().print(locations);
     }
 
-    @RequestMapping("addUnlockStates")
+    @RequestMapping("/addUnlockStates")
     public void addUnlockStates(HttpServletRequest request,HttpServletResponse response) throws IOException {
         int userId = Integer.parseInt(request.getParameter("userId"));
         String unlockStatesJson = request.getParameter("unlockStatesJson");
@@ -247,7 +248,7 @@ public class UserController {
         response.getWriter().print("success");
     }
 
-    @RequestMapping("getUnlockStatesByDate")
+    @RequestMapping("/getUnlockStatesByDate")
     public void getUnlockStatesByDate(HttpServletRequest request,HttpServletResponse response) throws IOException {
         int userId = Integer.parseInt(request.getParameter("userId"));
         Date startTime = new Date(Long.parseLong(request.getParameter("startTime")));
@@ -258,7 +259,7 @@ public class UserController {
         response.getWriter().print(unlockStates);
     }
 
-    @RequestMapping("getAllUnlockStates")
+    @RequestMapping("/getAllUnlockStates")
     public void getAllUnlockStates(HttpServletRequest request,HttpServletResponse response) throws IOException {
         int userId = Integer.parseInt(request.getParameter("userId"));
         List<Unlock> unlockList = unlockService.getLocationByUserId(userId);
@@ -267,7 +268,7 @@ public class UserController {
         response.getWriter().print(locations);
     }
 
-    @RequestMapping("getParents")
+    @RequestMapping("/getParents")
     public void getParents(HttpServletRequest request,HttpServletResponse response) throws IOException {
         int userId = Integer.parseInt(request.getParameter("userId"));
         List<Relation> relationList = relationService.getRelationByUserId(userId);

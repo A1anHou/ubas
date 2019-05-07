@@ -1,7 +1,6 @@
 package com.alan.model;
 
 import java.util.Date;
-import java.util.List;
 
 public class Parent {
 
@@ -10,7 +9,6 @@ public class Parent {
     private String parentName;
     private String parentPwd;
     private Date parentRegTime;
-    private List<User> userList;
 
     public int getParentId() {
         return parentId;
@@ -52,11 +50,4 @@ public class Parent {
         this.parentRegTime = parentRegTime;
     }
 
-    public List<User> getUserList() {
-        return userList;
-    }
-
-    public void setUserList(List<User> userList) {
-        this.userList = userList;
-    }
 }

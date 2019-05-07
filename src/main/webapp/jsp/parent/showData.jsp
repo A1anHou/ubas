@@ -196,11 +196,12 @@
     var listSize = ${locationList.size()};
     if(listSize!=0){
         for (var i=0;i<listSize;i++){
-            var marker = new AMap.Marker({
-                position: new AMap.LngLat(${locationList.get(i).longitude}, ${locationList.get(i).latitude}),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
-                title: ${locationList.get(i).description}
-            });
+
             if(i!=0){
+                var marker = new AMap.Marker({
+                    position: new AMap.LngLat(${locationList.get(i).longitude}, ${locationList.get(i).latitude}),
+                    title: ${locationList.get(i).description}
+                });
                 map.add(marker);
             }
         }

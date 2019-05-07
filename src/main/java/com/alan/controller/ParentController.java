@@ -59,13 +59,14 @@ public class ParentController {
             //数据库检查
             Parent parent = parentService.getParentByTel(Long.parseLong(parentTel));
             if (parent != null) {
-                if (parent.getParentPwd().equals(parentPwd)) {
+                if (parent.getParentPwd().trim().equals(parentPwd.trim())) {
                     //将用户信息存储到Session中
                     session.setAttribute("SESSION_USER", parent);
                     model.addAttribute("login_result", "登录成功");
                     return "forward:/parent/index";
                 }
             }
+
             model.addAttribute("login_result", "用户名或密码错误");
             return "parent/login";
         }
@@ -370,10 +371,11 @@ public class ParentController {
         location.setEndTime(new Date());
         locationList.add(location);
         SimpleDateFormat sf = new SimpleDateFormat("HH:mm");
-        for (Location location1 : locationList) {
-            String locationDescription = "'" + sf.format(location.getStartTime()) + "~" + sf.format(location.getEndTime()) + "'";
-            location.setDescription(locationDescription);
+        for (Location locationTemp : locationList) {
+            String locationDescription = "'" + sf.format(locationTemp.getStartTime()) + "~" + sf.format(locationTemp.getEndTime()) + "'";
+            locationTemp.setDescription(locationDescription);
         }
+        System.err.println(locationList.get(0).getDescription());
         model.addAttribute("user", user);
         model.addAttribute("date", date);
         model.addAttribute("locationList", locationList);

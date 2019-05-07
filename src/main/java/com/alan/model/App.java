@@ -12,7 +12,6 @@ public class App {
     private String appType;
     private String appIcon;
     private Date appAddTime;
-    private int useCount;
     private int useTime;
     private List<UseState> useStateList = new ArrayList<UseState>();
 

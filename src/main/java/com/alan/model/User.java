@@ -1,7 +1,6 @@
 package com.alan.model;
 
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by AlanHou on 2019/4/14.
@@ -16,7 +15,6 @@ public class User {
     private int userGender;
     private String userJob;
     private Date userRegTime;
-    private List<Parent> parentList;
 
     public int getUserId() {
         return userId;
@@ -82,26 +80,4 @@ public class User {
         this.userRegTime = userRegTime;
     }
 
-    public List<Parent> getParentList() {
-        return parentList;
-    }
-
-    public void setParentList(List<Parent> parentList) {
-        this.parentList = parentList;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", userTel=" + userTel +
-                ", userName='" + userName + '\'' +
-                ", userPwd='" + userPwd + '\'' +
-                ", userBirthday=" + userBirthday +
-                ", userGender=" + userGender +
-                ", userJob='" + userJob + '\'' +
-                ", userRegTime=" + userRegTime +
-                ", parentList=" + parentList +
-                '}';
-    }
 }
