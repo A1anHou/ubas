@@ -3,6 +3,7 @@ package com.alan.controller;
 import com.alan.model.*;
 import com.alan.service.*;
 import com.alan.util.CrawlerUtil;
+import com.alan.util.TokenUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -112,16 +113,23 @@ public class UserController {
     public void login(HttpServletRequest request,HttpServletResponse response) throws IOException {
         long userTel = Long.parseLong(request.getParameter("userTel"));
         User user = userService.getUserByTel(userTel);
+        LoginResult loginResult = new LoginResult();
         if(user!=null){
             String userPwd = request.getParameter("userPwd");
             if(!userPwd.equals(user.getUserPwd())) {
                 user = null;
             }else{
-                user.setUserPwd(null);
+                Login login = new Login();
+                login.setUserId(user.getUserId());
+                login.setUserPwd(userPwd);
+                //给用户jwt加密生成token
+                String token = TokenUtil.sign(login, 60L* 1000L* 30L);
+                loginResult.setUserId(user.getUserId());
+                loginResult.setToken(token);
             }
         }
         ObjectMapper mapper = new ObjectMapper();
-        String userInfo = mapper.writeValueAsString(user);
+        String userInfo = mapper.writeValueAsString(loginResult);
         response.getWriter().print(userInfo);
     }
 
