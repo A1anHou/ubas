@@ -1,15 +1,15 @@
 package com.alan.model;
 
 public class LoginResult {
-    int userId;
+    User user;
     String token;
 
-    public int getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getToken() {

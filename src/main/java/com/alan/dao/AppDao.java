@@ -28,4 +28,6 @@ public interface AppDao {
     void insertApp(@Param("appName")String appName, @Param("appPackage")String appPackage, @Param("appType")String appType, @Param("appIcon")String appIcon, @Param("appAddTime")Date appAddTime, @Param("submitUserId")int submitUserId);
 
     String selectAppPackageByAppId(int appId);
+
+    App selectAppByPackage(String appPackage);
 }

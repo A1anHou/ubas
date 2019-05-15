@@ -124,12 +124,13 @@ public class UserController {
                 login.setUserPwd(userPwd);
                 //给用户jwt加密生成token
                 String token = TokenUtil.sign(login, 60L* 1000L* 30L);
-                loginResult.setUserId(user.getUserId());
+                loginResult.setUser(user);
                 loginResult.setToken(token);
             }
         }
         ObjectMapper mapper = new ObjectMapper();
         String userInfo = mapper.writeValueAsString(loginResult);
+        System.err.println(userInfo);
         response.getWriter().print(userInfo);
     }
 
@@ -292,5 +293,32 @@ public class UserController {
         ObjectMapper mapper = new ObjectMapper();
         String parents = mapper.writeValueAsString(parentAndRelationList);
         response.getWriter().print(parents);
+    }
+
+    @RequestMapping("/getAppInfo")
+    public void getAppInfo(HttpServletRequest request,HttpServletResponse response) throws IOException{
+        String appPackage = request.getParameter("appPackage");
+        App app = appService.getAppByPackage(appPackage);
+        String type = "";
+        if(app==null){
+            String appName = request.getParameter("appName");
+            Map<String,String> typeAndIcon =  CrawlerUtil.getTypeAndIcon(appPackage);
+            String appType = typeAndIcon.get("type");
+            String appIcon = typeAndIcon.get("icon");
+            int userId = Integer.parseInt(request.getParameter("userId"));
+            int submitUserId = userId;
+            if(appType.equals("")){
+                appType = "未分类";
+            }
+            if(appIcon.equals("")){
+                appIcon = "${path}/static/custom/image/application_default.png";
+            }
+            Date appAddTime = new Date();
+            appService.addApp(appName,appPackage,appType,appIcon,appAddTime,submitUserId);
+            type = appType;
+        }else{
+            type = app.getAppType();
+        }
+        response.getWriter().print(type);
     }
 }

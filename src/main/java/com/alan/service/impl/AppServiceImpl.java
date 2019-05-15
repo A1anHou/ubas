@@ -73,4 +73,9 @@ public class AppServiceImpl implements AppService {
         editAppDao.insertEditRecord(appId,appAttr,appOld,appNew,optAdminId,appChangeTime);
     }
 
+    @Override
+    public App getAppByPackage(String appPackage) {
+        return appDao.selectAppByPackage(appPackage);
+    }
+
 }

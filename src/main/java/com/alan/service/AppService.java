@@ -27,4 +27,6 @@ public interface AppService {
     String getAppPackageByAppId(int appId);
 
     void recordEdit(int appId, String appAttr, String appOld, String appNew, int optAdminId, Date appChangeTime);
+
+    App getAppByPackage(String appPackage);
 }

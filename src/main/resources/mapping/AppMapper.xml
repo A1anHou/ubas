@@ -53,5 +53,9 @@
         SELECT app_package FROM application
         WHERE app_id = #{appId}
     </select>
+    <select id="selectAppByPackage" parameterType="java.lang.String" resultMap="AppBaseMap">
+        SELECT app_category FROM application
+        WHERE app_package = #{appPackage}
+    </select>
 
 </mapper>
