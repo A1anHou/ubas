@@ -175,7 +175,7 @@ public class AdminController {
             adminService.addAdmin(adminTel, adminName, adminPwd, adminRegTime);
             Admin admin = adminService.getAdminByTel(adminTel);
             Admin optAdmin = (Admin)session.getAttribute("SESSION_USER");
-            adminService.recordEdit(admin.getAdminId(), "add_admin", null, null,optAdmin.getAdminId(),new Date());
+            adminService.recordEdit(admin.getAdminId(), "add_admin", null, String.valueOf(adminTel),optAdmin.getAdminId(),new Date());
             res.put("status", "1");
             res.put("message", "添加成功");
             return res;
@@ -186,8 +186,9 @@ public class AdminController {
     @RequestMapping("/delApp")
     public String delApp(@RequestParam int appId, HttpSession session) {
         Admin optAdmin = (Admin)session.getAttribute("SESSION_USER");
+        App app = appService.getAppById(appId);
         appService.delApp(appId);
-        appService.recordEdit(appId,"del_app",null,null,optAdmin.getAdminId(),new Date());
+        appService.recordEdit(appId,"del_app",app.getAppPackage(),null,optAdmin.getAdminId(),new Date());
         return "forward:/admin/app";
     }
 
@@ -197,8 +198,9 @@ public class AdminController {
         HttpSession session = request.getSession();
         Admin optAdmin = (Admin) session.getAttribute("SESSION_USER");
         if (adminId == optAdmin.getAdminId()) {
+            Admin admin = adminService.getAdminById(adminId);
             adminService.delAdmin(adminId);
-            adminService.recordEdit(adminId, "del_admin", null, null,optAdmin.getAdminId(),new Date());
+            adminService.recordEdit(adminId, "del_admin", String.valueOf(admin.getAdminTel()), null,optAdmin.getAdminId(),new Date());
             session.setAttribute("SESSION_USER", null);
             return "admin/login";
         } else {

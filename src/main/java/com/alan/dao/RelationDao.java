@@ -22,4 +22,6 @@ public interface RelationDao {
     void deleteRelation(int relationId);
 
     List<Relation> selectRelationByUserId(int userId);
+
+    Relation selectRelationById(int relationId);
 }

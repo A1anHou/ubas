@@ -1,5 +1,6 @@
 package com.alan.service.impl;
 
+import com.alan.dao.EditRelationDao;
 import com.alan.dao.RelationDao;
 
 import com.alan.model.Relation;
@@ -16,6 +17,8 @@ import java.util.List;
 public class RelationServiceImpl implements RelationService {
     @Autowired
     private RelationDao relationDao;
+    @Autowired
+    private EditRelationDao editRelationDao;
 
     @Override
     public Integer getChildNum(int parentId) {
@@ -50,5 +53,15 @@ public class RelationServiceImpl implements RelationService {
     @Override
     public List<Relation> getRelationByUserId(int userId) {
         return relationDao.selectRelationByUserId(userId);
+    }
+
+    @Override
+    public void recordEdit(int relationId,int parentId, int userId,String relationAttr, String relationOld, String relationNew, Date relationChangeTime) {
+        editRelationDao.insertEditRecord(relationId,parentId,userId,relationAttr,relationOld,relationNew,relationChangeTime);
+    }
+
+    @Override
+    public Relation getRelationById(int relationId) {
+        return relationDao.selectRelationById(relationId);
     }
 }

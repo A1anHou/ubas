@@ -19,4 +19,8 @@ public interface RelationService {
     void delRelation(int relationId);
 
     List<Relation> getRelationByUserId(int userId);
+
+    void recordEdit(int relationId,int parentId, int userId,String relationAttr, String relationOld, String relationNew, Date relationChangeTime);
+
+    Relation getRelationById(int relationId);
 }

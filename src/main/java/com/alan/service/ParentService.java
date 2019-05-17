@@ -20,5 +20,5 @@ public interface ParentService {
 
     void editParentPwd(int parentId, String parentPwd);
 
-    void recordEdit(int parentId, String parent_pwd, String oldPwd, String parentPwd, Date date);
+    void recordEdit(int parentId, String parentAttr, String parentOld, String parentNew, Date parentChangeTime);
 }

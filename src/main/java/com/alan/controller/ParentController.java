@@ -191,6 +191,8 @@ public class ParentController {
                 }
                 Date relateTime = new Date();
                 relationService.addRelation(parentId, user.getUserId(), relationship, relateTime);
+                Relation relation = relationService.getRelationByParentIdAndUserId(parentId,user.getUserId());
+                relationService.recordEdit(relation.getRelationId(),parentId,user.getUserId(),"add_relation",null,relationship,relateTime);
                 res.put("status", "1");
                 res.put("message", "绑定成功");
                 return res;
@@ -203,9 +205,11 @@ public class ParentController {
 
     @RequestMapping("/unbindChild")
     @ResponseBody
-    public Map<String, String> bindChild(@RequestParam int relationId, HttpSession session) {
+    public Map<String, String> unbindChild(@RequestParam int relationId, HttpSession session) {
         Map<String, String> res = new HashMap<>();
+        Relation relation = relationService.getRelationById(relationId);
         relationService.delRelation(relationId);
+        relationService.recordEdit(relationId,relation.getParentId(),relation.getUserId(),"del_relation",relation.getRelationship(),null,new Date());
         res.put("status", "1");
         res.put("message", "解绑成功");
         return res;

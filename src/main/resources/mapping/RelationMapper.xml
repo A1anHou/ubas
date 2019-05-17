@@ -38,4 +38,8 @@
         SELECT * FROM relation
         WHERE user_id = #{userId}
     </select>
+    <select id="selectRelationById" parameterType="java.lang.Integer" resultMap="RelationBaseMap">
+        SELECT * FROM  relation
+        WHERE relation_id = #{relationId}
+    </select>
 </mapper>
