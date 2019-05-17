@@ -16,6 +16,7 @@ import java.util.List;
 public class AppServiceImpl implements AppService {
     @Autowired
     private AppDao appDao;
+    @Autowired
     private EditAppDao editAppDao;
 
     @Override
