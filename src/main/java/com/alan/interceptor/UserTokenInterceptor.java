@@ -10,6 +10,9 @@ import com.alan.util.ResponseData;
 import com.alan.util.TokenUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -39,8 +42,23 @@ public class UserTokenInterceptor implements HandlerInterceptor{
         ResponseData responseData = ResponseData.ok();
         //token不存在
         if(null != token) {
-            Login login = TokenUtil.unsign(token, Login.class);
+            //验证Token
             String loginId = request.getParameter("userId");
+            ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring/spring-context.xml");
+            RedisTemplate redisTemplate = applicationContext.getBean(RedisTemplate.class);
+            String storedToken = (String) redisTemplate.opsForValue().get(loginId);
+            //验证Token，若Redis中不存在以该用户名为key的token或传来的token与Redis中存储的token不一致则不放行
+            if(storedToken==null){
+                responseData = ResponseData.forbidden();
+                responseMessage(response, response.getWriter(), responseData);
+                return false;
+            }
+            if(!token.equals(storedToken)){
+                responseData = ResponseData.forbidden();
+                responseMessage(response, response.getWriter(), responseData);
+                return false;
+            }
+            Login login = TokenUtil.unsign(token, Login.class);
             //解密token后的loginId与用户传来的loginId不一致，一般都是token过期
             if(null != loginId && null != login) {
                 if(Integer.parseInt(loginId) == login.getUserId()) {

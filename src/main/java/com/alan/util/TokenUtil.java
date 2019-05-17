@@ -36,7 +36,7 @@ public class TokenUtil {
         try {
             final Map<String,Object> claims= verifier.verify(jwt);
 
-            System.err.println("PAYLOAD:"+claims.get(PAYLOAD));
+            //System.err.println("PAYLOAD:"+claims.get(PAYLOAD));
             if (claims.containsKey(EXP) && claims.containsKey(PAYLOAD)) {
                 long exp = (Long)claims.get(EXP);
                 long currentTimeMillis = System.currentTimeMillis();

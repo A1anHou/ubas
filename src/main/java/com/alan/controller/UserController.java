@@ -10,6 +10,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by AlanHou on 2019/4/14.
@@ -124,6 +128,12 @@ public class UserController {
                 login.setUserPwd(userPwd);
                 //给用户jwt加密生成token
                 String token = TokenUtil.sign(login, 60L* 1000L* 30L);
+                ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring/spring-context.xml");
+                RedisTemplate redisTemplate = applicationContext.getBean(RedisTemplate.class);
+                //将token存储到Redis中
+                redisTemplate.opsForValue().set(String.valueOf(user.getUserId()), token);
+                //设置过期时间
+                redisTemplate.expire(String.valueOf(user.getUserId()), 30, TimeUnit.MINUTES);
                 loginResult.setUser(user);
                 loginResult.setToken(token);
             }
