@@ -11,4 +11,6 @@ public interface UnlockService {
     void addUnlock(int userId, Date unlockTime);
 
     List<Unlock> getLocationByUserId(int userId);
+
+    Unlock getUnlockByUnlockTime(Date unlockTime);
 }

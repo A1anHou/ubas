@@ -19,4 +19,8 @@
         SELECT * FROM unlock_state
         WHERE user_id = #{userId}
     </select>
+    <select id="selectUnlockByUnlockTime" parameterType="java.util.Date" resultMap="UnlockBaseMap">
+        SELECT * FROM unlock_state
+        WHERE unlock_time = #{unlockTime}
+    </select>
 </mapper>

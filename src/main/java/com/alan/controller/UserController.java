@@ -140,24 +140,24 @@ public class UserController {
         }
         ObjectMapper mapper = new ObjectMapper();
         String userInfo = mapper.writeValueAsString(loginResult);
-        System.err.println(userInfo);
+        //System.err.println(userInfo);
         response.getWriter().print(userInfo);
     }
 
     @RequestMapping("/addUseStates")
-    public void addUseStates(HttpServletRequest request,HttpServletResponse response) throws IOException {
+    public void addUseStates(HttpServletRequest request,HttpServletResponse response) throws IOException  {
         int userId = Integer.parseInt(request.getParameter("userId"));
         String useStatesJson = request.getParameter("useStatesJson");
         ObjectMapper mapper = new ObjectMapper();
         JsonNode rootNode = mapper.readTree(useStatesJson); // 读取Json
         JsonNode useStatesNode = rootNode.path("useStates");
         for(int i=0;i<useStatesNode.size();i++){
-            String appPackage = useStatesNode.path("appPackage").asText();
-            Date startTime = new Date(useStatesNode.path("startTime").asLong());
-            Date endTime = new Date(useStatesNode.path("endTime").asLong());
+            String appPackage = useStatesNode.get(i).path("appPackage").asText();
+            Date startTime = new Date(useStatesNode.get(i).path("startTime").asLong());
+            Date endTime = new Date(useStatesNode.get(i).path("endTime").asLong());
             int appId = appService.getAppIdByPackage(appPackage);
             if(appId==0){
-                String appName = useStatesNode.path("appName").asText();
+                String appName = useStatesNode.get(i).path("appName").asText();
                 Map<String,String> typeAndIcon =  CrawlerUtil.getTypeAndIcon(appPackage);
                 String appType = typeAndIcon.get("type");
                 String appIcon = typeAndIcon.get("icon");
@@ -223,10 +223,10 @@ public class UserController {
         JsonNode rootNode = mapper.readTree(locationsJson); // 读取Json
         JsonNode locationsNode = rootNode.path("locations");
         for(int i=0;i<locationsNode.size();i++){
-            double longitude = locationsNode.path("longitude").asDouble();
-            double latitude= locationsNode.path("latitude").asDouble();
-            Date startTime = new Date(locationsNode.path("startTime").asLong());
-            Date endTime = new Date(locationsNode.path("endTime").asLong());
+            double longitude = locationsNode.get(i).path("longitude").asDouble();
+            double latitude= locationsNode.get(i).path("latitude").asDouble();
+            Date startTime = new Date(locationsNode.get(i).path("startTime").asLong());
+            Date endTime = new Date(locationsNode.get(i).path("endTime").asLong());
             locationService.addLocation(userId,longitude,latitude,startTime,endTime);
         }
         response.getWriter().print("success");
@@ -257,12 +257,17 @@ public class UserController {
     public void addUnlockStates(HttpServletRequest request,HttpServletResponse response) throws IOException {
         int userId = Integer.parseInt(request.getParameter("userId"));
         String unlockStatesJson = request.getParameter("unlockStatesJson");
+        System.err.println(unlockStatesJson);
         ObjectMapper mapper = new ObjectMapper();
         JsonNode rootNode = mapper.readTree(unlockStatesJson); // 读取Json
         JsonNode unlockStatesNode = rootNode.path("unlockStates");
         for(int i=0;i<unlockStatesNode.size();i++){
-            Date unlockTime = new Date(unlockStatesNode.path("unlockTime").asLong());
-            unlockService.addUnlock(userId,unlockTime);
+//            System.err.println(unlockStatesNode.path("unlockTime"));
+            Date unlockTime = new Date(unlockStatesNode.get(i).path("unlockTime").asLong());
+            Unlock unlock = unlockService.getUnlockByUnlockTime(unlockTime);
+            if(unlock==null){
+                unlockService.addUnlock(userId,unlockTime);
+            }
         }
         response.getWriter().print("success");
     }

@@ -128,7 +128,6 @@
         //提交监听事件
         form.on('submit(save)', function (data) {
             params = data.field;
-            alert(JSON.stringify(params));
             submit($,params);
             return false;
         });

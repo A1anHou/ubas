@@ -14,4 +14,6 @@ public interface UnlockDao {
     void insertUnlock(@Param("userId")int userId, @Param("unlockTime")Date unlockTime);
 
     List<Unlock> selectUnlockByUserId(int userId);
+
+    Unlock selectUnlockByUnlockTime(Date unlockTime);
 }

@@ -37,8 +37,13 @@ public class UserTokenInterceptor implements HandlerInterceptor{
         if(uri.startsWith("/login") ) {
             return true;
         }
+        //排除注册请求
+        if(uri.startsWith("/register") ) {
+            return true;
+        }
         response.setCharacterEncoding("utf-8");
         String token = request.getParameter("token");
+        System.err.println("token:"+token);
         ResponseData responseData = ResponseData.ok();
         //token不存在
         if(null != token) {
@@ -60,6 +65,8 @@ public class UserTokenInterceptor implements HandlerInterceptor{
             }
             Login login = TokenUtil.unsign(token, Login.class);
             //解密token后的loginId与用户传来的loginId不一致，一般都是token过期
+            System.err.println("解密ID"+login.getUserId());
+            System.err.println("传来的ID"+loginId);
             if(null != loginId && null != login) {
                 if(Integer.parseInt(loginId) == login.getUserId()) {
                     return true;
@@ -74,6 +81,7 @@ public class UserTokenInterceptor implements HandlerInterceptor{
                 return false;
             }
         } else {
+            System.err.println("Token不存在");
             responseData = ResponseData.forbidden();
             responseMessage(response, response.getWriter(), responseData);
             return false;

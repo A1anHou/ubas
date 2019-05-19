@@ -17,6 +17,10 @@ public class ParentSessionInterceptor implements HandlerInterceptor {
         if(uri.startsWith("/login") ) {
             return true;
         }
+        //排除注册请求
+        if(uri.startsWith("/register") ) {
+            return true;
+        }
         if(user == null){
             response.sendRedirect(request.getContextPath() + "/jsp/parent/login.jsp");
             return false;

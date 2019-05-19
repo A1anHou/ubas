@@ -195,15 +195,15 @@
                                         <tr>
                                             <td>使用时长：${thisWeekTotal}分钟</td>
                                             <td>相对上周&nbsp
-                                                <c:if test="${thisWeekTotal>lastWeekTotalNightTime}">
+                                                <c:if test="${thisWeekTotal>lastWeekTotal}">
                                                     <i class="layui-icon layui-icon-up" style="color: #FF5722;"></i>
                                                     增加了<fmt:formatNumber type="number" value="${(thisWeekTotal-lastWeekTotal)/(lastWeekTotal)*100}" pattern="0.00" maxFractionDigits="2"/>%
                                                 </c:if>
-                                                <c:if test="${thisWeekTotal<lastWeekTotalNightTime}">
+                                                <c:if test="${thisWeekTotal<lastWeekTotal}">
                                                     <i class="layui-icon layui-icon-down" style="color: #5FB878;"></i>
-                                                    减少了<fmt:formatNumber type="number" value="${(lastWeekTotalNightTime-thisWeekTotal)/(lastWeekTotalNightTime)*100}" pattern="0.00" maxFractionDigits="2"/>%
+                                                    减少了<fmt:formatNumber type="number" value="${(lastWeekTotal-thisWeekTotal)/(lastWeekTotal)*100}" pattern="0.00" maxFractionDigits="2"/>%
                                                 </c:if>
-                                                <c:if test="${thisWeekTotal==lastWeekTotalNightTime}">
+                                                <c:if test="${thisWeekTotal==lastWeekTotal}">
                                                     ---&nbsp
                                                     保持不变
                                                 </c:if>

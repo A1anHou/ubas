@@ -145,13 +145,13 @@
                     </div>
                     <hr/>
                     <div class="layui-row">
-                        <fieldset class="layui-elem-field">
+                        <fieldset class="layui-elem-field ">
                             <legend>
                                 <i class="layui-icon layui-icon-location"></i>
-                                位置信息 - 位置点${locationList.size()-1}处
+                                位置信息 - 位置点${locationList.size()}处
                             </legend>
                             <div class="layui-field-box">
-                                <div id="container"></div>
+                                <div id="container" style="width: auto"></div>
                             </div>
                         </fieldset>
 
@@ -195,17 +195,29 @@
     });
     var listSize = ${locationList.size()};
     if(listSize!=0){
-        for (var i=0;i<listSize;i++){
+        <c:forEach items="${locationList}" var="location">
+        var marker = new AMap.Marker({
+            position: new AMap.LngLat(${location.longitude}, ${location.latitude}),
+            title: ${location.description}
+        });
 
-            if(i!=0){
-                var marker = new AMap.Marker({
-                    position: new AMap.LngLat(${locationList.get(i).longitude}, ${locationList.get(i).latitude}),
-                    title: ${locationList.get(i).description}
-                });
-                map.add(marker);
-            }
-        }
+        map.add(marker);
+        </c:forEach>
     }
+
+
+    <%--if(listSize!=0){--%>
+        <%--for (var i=0;i<listSize;i++){--%>
+            <%--if(i!=0){--%>
+                <%--var marker = new AMap.Marker({--%>
+                    <%--position: new AMap.LngLat(${locationList.get(i).longitude}, ${locationList.get(i).latitude}),--%>
+                    <%--title: ${locationList.get(i).description}--%>
+                <%--});--%>
+
+                <%--map.add(marker);--%>
+            <%--}--%>
+        <%--}--%>
+    <%--}--%>
     layui.use(['element', 'laydate','form'], function () {
         var element = layui.element;
         var laydate = layui.laydate;

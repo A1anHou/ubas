@@ -368,18 +368,21 @@ public class ParentController {
         ObjectMapper mapper2 = new ObjectMapper();
         pieDataList2.add(mapper2.writeValueAsString(pieHelper2));
 
-        Location location = new Location();
-        location.setLatitude(0);
-        location.setLongitude(0);
-        location.setStartTime(new Date());
-        location.setEndTime(new Date());
-        locationList.add(location);
+//        Location location = new Location();
+//        location.setLatitude(0);
+//        location.setLongitude(0);
+//        location.setStartTime(new Date());
+//        location.setEndTime(new Date());
+//        locationList.add(location);
         SimpleDateFormat sf = new SimpleDateFormat("HH:mm");
         for (Location locationTemp : locationList) {
             String locationDescription = "'" + sf.format(locationTemp.getStartTime()) + "~" + sf.format(locationTemp.getEndTime()) + "'";
             locationTemp.setDescription(locationDescription);
         }
-        System.err.println(locationList.get(0).getDescription());
+//        for (int i = 0;i<locationList.size();i++){
+//            System.err.println(locationList.get(i).getDescription());
+//        }
+
         model.addAttribute("user", user);
         model.addAttribute("date", date);
         model.addAttribute("locationList", locationList);
