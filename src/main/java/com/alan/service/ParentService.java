@@ -10,7 +10,7 @@ public interface ParentService {
 
     List<Parent> getParentByIdOrName(String keyword);
 
-    Parent getParentByTel(long parseLong);
+    Parent getParentByTel(long parentTel);
 
     void addParent(long parentTel, String parentName, String parentPwd, Date parentRegTime);
 
