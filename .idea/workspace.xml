@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dd51f980-b141-4b2d-bd67-e2d190f56499" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alan/service/ParentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alan/service/ParentService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,11 +20,11 @@
     <favorites_list name="ubas" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/dao/UnlockDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="292">
               <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
             </state>
           </provider>
@@ -175,9 +174,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="949" />
-    <option name="width" value="980" />
-    <option name="height" value="1031" />
+    <option name="x" value="948" />
+    <option name="width" value="981" />
+    <option name="height" value="1032" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -187,6 +186,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -265,7 +265,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -441,11 +440,12 @@
       <workItem from="1557846903836" duration="70631000" />
       <workItem from="1558242511501" duration="10017000" />
       <workItem from="1558354915891" duration="8684000" />
+      <workItem from="1559644529539" duration="821000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="476900000" />
+    <option name="totallyTimeSpent" value="477721000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -457,9 +457,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="633" y="0" width="653" height="687" extended-state="0" />
+    <frame x="632" y="0" width="654" height="688" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49658313" visible="true" weight="0.05042017" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49658313" visible="true" weight="0.052013423" />
       <window_info id="Structure" order="1" sideWeight="0.5008881" side_tool="true" weight="0.23282135" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -469,7 +469,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3285968" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4995958" weight="0.4831261" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4995958" weight="0.4820144" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -947,7 +947,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alan/dao/UnlockDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="292">
           <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
         </state>
       </provider>
